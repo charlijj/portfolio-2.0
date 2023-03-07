@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "https://charlijj.github.io/portfolio-2.0/static/css/main.d8b88512.css",
+    "main.js": "https://charlijj.github.io/portfolio-2.0/static/js/main.1de28f41.js",
+    "static/js/787.b597a222.chunk.js": "https://charlijj.github.io/portfolio-2.0/static/js/787.b597a222.chunk.js",
+    "index.html": "https://charlijj.github.io/portfolio-2.0/index.html",
+    "main.d8b88512.css.map": "https://charlijj.github.io/portfolio-2.0/static/css/main.d8b88512.css.map",
+    "main.1de28f41.js.map": "https://charlijj.github.io/portfolio-2.0/static/js/main.1de28f41.js.map",
+    "787.b597a222.chunk.js.map": "https://charlijj.github.io/portfolio-2.0/static/js/787.b597a222.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8b88512.css",
+    "static/js/main.1de28f41.js"
+  ]
+}
