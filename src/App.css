@@ -1,0 +1,695 @@
+.App {
+
+  display: flex;
+  align-items: center;
+  justify-content: start; 
+  flex-direction: column;
+
+  width: 100%;
+  height: auto;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+
+  font-size: 3rem;
+  margin-top: 50px;
+}
+
+.subtitle {
+
+  font-size: 2rem;
+  margin-top: 40px;
+}
+
+.line {
+
+  width: 100%;
+  height: 2px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.footer {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+
+  text-align: center;
+  font-size: smaller;
+}
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+ 
+HEADER 
++-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+  */
+
+.App-header {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  width: 100%;
+  height: 550px;
+
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* ---------------------- Circle Animation ---------------------- */
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.2s ease-in-out;
+}
+
+.small {
+  width: 75px;
+  height: 75px;
+  background-color: #f1c40f;
+}
+
+.medium {
+  width: 150px;
+  height: 150px;
+  background-color: #e67e22;
+}
+
+.large {
+  width: 200px;
+  height: 200px;
+  background-color: #e74c3c;
+}
+/* --------------------------------------------------------------- */
+
+/* ------------------------- Header Text ------------------------- */
+
+.App-header-title,
+.App-header-subtitle {
+
+  position: absolute;
+  text-align: center;
+}
+
+.App-header-title {
+
+  font-size: 5rem;
+  top: 10%;
+}
+
+.App-header-subtitle {
+
+  font-size: 3rem;
+  top: 50%;
+}
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+ 
+Table Of Contents  
++-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+  */
+
+.App-table-of-contents {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  width: 100%;
+  height: 600px;
+
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+
+  --fontSizeIncrement: 0.1rem;
+  --level1FontSize: 2rem;
+  --level2FontSize: 1.7rem;
+  --level3FontSize: 1.5rem;
+}
+
+.level1 {
+
+  font-size: var(--level1FontSize);
+}
+
+.level1:hover {
+
+  font-size: calc(var(--level1FontSize) + var(--fontSizeIncrement));
+}
+
+.level2 {
+
+  font-size: var(--level2FontSize);
+}
+
+.level2:hover {
+
+  font-size: calc(var(--level2FontSize) + var(--fontSizeIncrement));
+}
+
+.level3 {
+
+  font-size: var(--level3FontSize);
+}
+
+.level3:hover {
+
+  font-size: calc(var(--level3FontSize) + var(--fontSizeIncrement));
+}
+
+.level1 a, .level2 a, .level3 a{ 
+
+  color: #000;
+  text-decoration: none;
+  transition: color ease 0.2s, font-size ease 0.2s;
+}
+
+.level1 a:hover, .level2 a:hover, .level3 a:hover { color: rgba(0, 0, 0, 0.6); }
+
+.App-table-of-contents ul {
+
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  width: 300px;
+  list-style-type: none;
+}
+
+.App-table-of-contents li {
+
+  list-style-type: none;
+  border-left: 4px solid #000;
+  margin-left: 1em;
+}
+
+.App-table-of-contents li div {
+
+  padding-left: 1em;
+  padding-top: 0.25em;
+  position: relative;
+  height: 1.25em;
+}
+
+.App-table-of-contents li div::before {
+
+  content:'';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  bottom: 50%;
+  width: 0.75em;
+
+  border: 4px solid #000;
+  border-top: 0 none transparent;
+  border-right: 0 none transparent;
+}
+
+.App-table-of-contents ul > li:last-child { border-color: transparent;}
+/* --------------------------------------------------------------- */
+
+/* --------------------------- About Me -------------------------- */
+
+.App-about-me {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  width: 100%;
+  height: 3500px;
+
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+}
+
+.App-about-me-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  width: 70%;
+  height: auto;
+  margin-top: 50px;
+  padding: 15px 10px;
+
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-size: 1.1rem;
+}
+
+.App-about-me-img-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  width: 100%;
+  height: auto;
+}
+
+.App-about-me-img-container p {
+
+  width: 60%;
+}
+
+.App-about-me-img-caption {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+  font-size: small;
+
+  color: rgba(0, 0, 0, 0);
+  transition: color ease 0.2s;
+}
+
+.App-about-me-img-caption:hover {
+
+  color: rgba(0, 0, 0, 1);
+}
+.App-about-me-img-caption:not(:hover) {
+
+  color: rgba(0, 0, 0, 0);
+}
+
+.App-about-me-audio-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 80px;
+  margin-left: 20px;
+  padding: 0 5px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(185, 13, 13, 0.3);
+}
+
+.App-about-me-audio-container audio {
+
+  width: 100%;
+}
+
+.App-about-me-container img {
+
+  margin: 5px 15px; 
+}
+
+/* --------------------------------------------------------------- */
+
+/* --------------------------- Projects-------------------------- */
+
+
+.App-projects {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  width: 100%;
+  height: 1700px;
+
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+}
+
+.App-projects-select-container  {
+
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 80%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.App-projects-select-container-nav {
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100px;
+  top: 0;
+  opacity: 0;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(105, 105, 105, 0.8);
+}
+
+.App-projects-select-container-nav-select {
+
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#languageOptions {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
+}
+
+/* ------------------------------------------------------------------ */
+/* Check box style from https://getcssscan.com/css-checkboxes-examples*/
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+
+.checkbox-wrapper-13 input[type=checkbox] {
+  --active: #275EFE;
+  --active-inner: #fff;
+  --focus: 2px rgba(39, 94, 254, .3);
+  --border: #BBC1E1;
+  --border-hover: #275EFE;
+  --background: #fff;
+  --disabled: #F6F8FF;
+  --disabled-inner: #E1E6F9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 21px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-left: 0;
+  cursor: pointer;
+  border: 1px solid var(--bc, var(--border));
+  background: var(--b, var(--background));
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+.checkbox-wrapper-13 input[type=checkbox]:after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+}
+.checkbox-wrapper-13 input[type=checkbox]:checked {
+  --b: var(--active);
+  --bc: var(--active);
+  --d-o: .3s;
+  --d-t: .6s;
+  --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+}
+.checkbox-wrapper-13 input[type=checkbox]:disabled {
+  --b: var(--disabled);
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+.checkbox-wrapper-13 input[type=checkbox]:disabled:checked {
+  --b: var(--disabled-inner);
+  --bc: var(--border);
+}
+.checkbox-wrapper-13 input[type=checkbox]:disabled + label {
+  cursor: not-allowed;
+}
+.checkbox-wrapper-13 input[type=checkbox]:hover:not(:checked):not(:disabled) {
+  --bc: var(--border-hover);
+}
+.checkbox-wrapper-13 input[type=checkbox]:focus {
+  box-shadow: 0 0 0 var(--focus);
+}
+.checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
+  width: 21px;
+}
+.checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
+  opacity: var(--o, 0);
+}
+.checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
+  --o: 1;
+}
+#languageOptions label {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
+  border-radius: 7px;
+}
+.checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
+  width: 5px;
+  height: 9px;
+  border: 2px solid var(--active-inner);
+  border-top: 0;
+  border-left: 0;
+  left: 7px;
+  top: 4px;
+  transform: rotate(var(--r, 20deg));
+}
+.checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
+  --r: 43deg;
+}
+}
+
+.checkbox-wrapper-13 * {
+box-sizing: inherit;
+}
+.checkbox-wrapper-13 *:before,
+.checkbox-wrapper-13 *:after {
+box-sizing: inherit;
+}
+/* ------------------------------------------------------------------ */
+
+.App-projects-select-container-fake-nav {
+
+  width: 100%;
+  height: 100px;
+}
+
+.App-projects-select-container-link {
+
+  width: 300px;
+  height: 300px;
+  margin: 20px 2%;
+  text-decoration: none;
+  transition: width ease 0.3s, height ease 0.3s, box-shadow ease 0.3s;
+
+}
+
+.App-projects-select-container-item {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 10px;
+
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.App-projects-select-container-link:hover {
+
+  width: 305px;
+  height: 305px;
+}
+
+.App-projects-select-container-item:hover {
+
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+}
+
+.App-projects-select-container-item p { margin-top: 50%; }
+
+
+.App-projects-modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content/Box */
+.App-projects-modal-display {
+
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8); 
+  margin: 5% auto; 
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 20px;
+  width: 80%; 
+
+}
+
+.App-projects-modal-content {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+/* The Close Button */
+.App-projects-modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.App-projects-modal-close:hover,
+.App-projects-modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.App-projects-modal:target {
+  display: block;
+}
+
+/* Hide the modal content by default */
+.App-projects-modal .App-projects-modal-display {
+  display: none;
+}
+
+/* Show the modal content when the modal is displayed */
+.App-projects-modal:target .App-projects-modal-display {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------- Animations ------------------------- */
+.animate-in {
+  
+  animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-out {
+  
+  animation: fade-out 1s ease forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+/* --------------------------------------------------------------- */
+
+/* ---------------------- Screen Size Adjust --------------------- */
+
+@media only screen and (max-width: 800px) {
+
+  .App-header-title {
+
+    font-size: 3rem;
+  }
+  
+  .App-header-subtitle {
+  
+    font-size: 2rem;
+  }
+
+  .title {
+  
+    font-size: 2rem;
+  }
+
+  .App-about-me {
+
+    height: 5000px;
+  }
+
+  .App-about-me-container {
+
+    width: 90%;
+  }
+
+  .App-projects {
+
+    height: 4500px;
+  }
+}
+/* --------------------------------------------------------------- */
+
