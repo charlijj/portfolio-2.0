@@ -315,7 +315,7 @@ const projectsObject = [
         rating: "4",
         desc: "A web design business I ran in the summer of 2021 in Parksville.",
         img: "/img/jjweb.jpg",
-        fullDesc: `In the summer of 2021, I started a small web design business called JJWEB in Parksville. I focused on creating static websites for family and friends who were small street vendors. My goal was to help them establish an online presence and showcase their businesses to a wider audience. Although my services were limited to friends and family, I took pride in providing them with personalized websites that met their needs and preferences. Overall, it was a rewarding experience to see the positive impact my work had on their businesses.`,
+        fullDesc: `In the summer of 2021, I started a small web design business called <a href="http://jjweb.ca" target="_blank">jjweb.ca</a> in Parksville. I focused on creating static websites for family and friends who were small street vendors. My goal was to help them establish an online presence and showcase their businesses to a wider audience. Although my services were limited to friends and family, I took pride in providing them with personalized websites that met their needs and preferences. Overall, it was a rewarding experience to see the positive impact my work had on their businesses.`,
         link: "https://github.com/jjwebdesign/JJ-Web-Design",
         show: true
     },
@@ -361,10 +361,10 @@ const projectsObject = [
         language: ["Racket"],
         date: "2020-10",
         rating: "3",
-        desc: "This project uses Racket to calculate the Fibonacci Sequence of a given n.",
+        desc: "A Racket program that calculates the Fibonacci Sequence of a given n.",
         img: "/img/racket.png",
-        fullDesc: "",
-        link: "",
+        fullDesc: "This is a small project to demonstrate the advantages amd disadvantages of the functional programming language Racket by calculating the Fibonacci Sequence of a given n.",
+        link: "https://github.com/charlijj/portfolio/blob/main/ext/fibonacciSeq.rkt",
         show: true
     },
     {
@@ -374,9 +374,15 @@ const projectsObject = [
         date: "2023-02",
         rating: "4",
         desc: "A resumes parser designed to help HR sort through resumes and organize information.",
-        img: "none",
-        fullDesc: "",
-        link: "",
+        img: "/img/xTract.png",
+        fullDesc: `
+            XTract is an GUI application that uses text-parsing libraries and regular expressions to extract
+            relevant information from resumes and other documents. It is built entirely in Python and designed to
+            streamline the resume screening process. The application will store all useful information like name,
+            contact information, experience, education, and skills in a structured format, making it easy for recruiters
+            and HR personnel to review and analyze.   
+        `,
+        link: "https://github.com/RileyMacD/XTract",
         show: true
     },
     {
@@ -387,8 +393,8 @@ const projectsObject = [
         rating: "3",
         desc: "AVL Data structure implemented in C++.",
         img: "/img/avl-tree.jpg",
-        fullDesc: "",
-        link: "",
+        fullDesc: "This is a C++ implementation of an AVL tree, a self-balancing binary search tree. The implementation includes basic operations such as insertion, deletion, and searching, functions to maintain the balance of the tree, as well as options to manually rotate nodes.",
+        link: "https://github.com/charlijj/AVL-Tree",
         show: true
     },
     {
@@ -399,8 +405,10 @@ const projectsObject = [
         rating: "4",
         desc: "An oscillator keyboard that the user can play by typing keys on their keyboard.",
         img: "/img/jsOscillator.jpg",
-        fullDesc: "",
-        link: "",
+        fullDesc: `
+            This web application is an interactive oscillator keyboard that allows users to play notes using their computer keyboard. It features 2 full octaves of notes arranged in an easy-to-understand manner, the choice of four waveforms, and is built with JavaScript, HTML, and CSS, as well as the Canvas and WebAudio APIs. The application also includes a dynamic graphic equalizer background that responds in real-time to the user's input. You can play it at <a href="https://charlijj.github.io/JS-Oscillator/" target="_blank">JSOscillator.play</a>.        
+        `,
+        link: "https://github.com/charlijj/JS-Oscillator",
         show: true
     },
     {
@@ -411,8 +419,10 @@ const projectsObject = [
         rating: "3",
         desc: "A simple 2D game where the player weaves through traffic on a busy highway and dodges the other cars on the road. The player can move using the arrow keys or WASD.",
         img: "/img/highwayRacer.jpg",
-        fullDesc: "",
-        link: "",
+        fullDesc: `
+            Highway Racer is a 2D game where the player must dodge traffic on a busy highway using the arrow keys or WASD. The game is built with JavaScript, HTML, and CSS, and features the Canvas API for graphics. The game includes a high score system, soundtrack, and increasing difficulty levels to keep players engaged. The soundtrack adds to the intensity of the game, while the high score system and increasing difficulty provide replayability and competitiveness. You can play Highway Racer at <a href="https://charlijj.github.io/Highway-Racer-Game/" target="_blank">HighwayRacer.go</a>.        
+        `,
+        link: "https://github.com/charlijj/Highway-Racer-Game",
         show: true
     },
     {
@@ -423,8 +433,8 @@ const projectsObject = [
         rating: "1",
         desc: "A static website for a fictional pizza restaurant based in Greenland. It provides an online ordering service as well as information about the restaurant and menu.",
         img: "/img/trechecoPizza.jpg",
-        fullDesc: "",
-        link: "",
+        fullDesc: "This project is a static website for a fictional pizza restaurant based in Greenland. It provides an online ordering service as well as information about the restaurant and menu. This was my final project for CSCI115 as well as the first full website I ever made.",
+        link: "https://github.com/charlijj/Mock-Pizza-Site",
         show: true
     }
 ];
@@ -564,7 +574,7 @@ export function projects()
             projectLink.classList.add("App-projects-select-container-link");
             projectLink.appendChild(projectsItem);
 
-            setTimeout(()=>{projects.appendChild(projectLink);}, i * 250);
+            setTimeout(()=>{projects.appendChild(projectLink);}, i * 200);
         }
     }
 

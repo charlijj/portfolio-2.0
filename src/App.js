@@ -60,7 +60,9 @@ function App() {
 
   return (
 
+
     <div className="App">
+      <a id="top"></a>
       <header className="App-header">
         <div className="circle small"></div>
         <div className="circle small"></div>
@@ -137,7 +139,26 @@ function App() {
         </div>
         <div id="modalContainer"></div>
       </div>
-      <footer class="footer">Jasper Charlinski, Feb 16th 2023 &copy;</footer>
+      <footer className="footer">
+
+        <div className="footer-Link">
+          <p>Connect with me on Linkedin! : </p>
+          <a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank">&nbsp;Jasper Charlinski</a>
+          <a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank"><img src={process.env.PUBLIC_URL + "/img/linkedIn-Icon.png"}alt="linkedin-icon" className="footer-Link-img"></img></a>
+        </div>
+        <div className="footer-Link">
+          <p>Send me an Email to get in contact : </p>
+          <a href="mailto:jjcharlinski@gmail.com">&nbsp;jjcharlinski@gmail.com</a>
+          <a href="mailto:jjcharlinski@gmail.com"><img src={process.env.PUBLIC_URL + "/img/mail-Icon.png"}alt="email-icon" className="footer-Link-mail"></img></a>
+        </div>
+        <div className="footer-Link">
+          <p>To see more of my projects visit my GitHub : </p>
+          <a href="https://github.com/charlijj" target="_blank">&nbsp;charlijj</a>
+          <a href="https://github.com/charlijj" target="_blank"><img src={process.env.PUBLIC_URL + "/img/github-Icon.png"}alt="github-icon" className="footer-Link-img"></img></a>
+        </div>
+        <p>Jasper Charlinski, Feb 16th 2023 &copy;</p>
+        <a href="#top"><strong>TOP</strong></a>
+        </footer>
     </div>
   );
 }
