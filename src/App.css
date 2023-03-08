@@ -297,12 +297,14 @@ Table Of Contents
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px;
-  height: 80px;
+  width: 260px;
+  height: 70px;
   margin-left: 20px;
   padding: 0 5px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: rgba(185, 13, 13, 0.3);
+
+  background-size: cover;
+  background-position: center;
+  background-image: url('/public/img/equalizer-background.gif');
 }
 
 .App-about-me-audio-container audio {
@@ -361,8 +363,10 @@ Table Of Contents
   top: 0;
   opacity: 0;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: rgba(105, 105, 105, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+
+  background-color: rgba(105, 105, 105, 0.7);
 }
 
 .App-projects-select-container-nav-select {
@@ -538,6 +542,8 @@ box-sizing: inherit;
 .App-projects-select-container-item p { margin-top: 50%; }
 
 
+/* ------------------------------------------------------------------------------ */
+
 .App-projects-modal {
   display: none; 
   position: fixed; 
@@ -557,11 +563,11 @@ box-sizing: inherit;
   position: relative;
   background-color: rgba(255, 255, 255, 0.8); 
   margin: 5% auto; 
-  padding: 20px;
+  padding: 35px;
+  width: 60%; 
+
   border: 1px solid rgba(0,0,0,0.4);
   border-radius: 20px;
-  width: 80%; 
-
 }
 
 .App-projects-modal-content {
@@ -676,20 +682,101 @@ box-sizing: inherit;
     font-size: 2rem;
   }
 
+  /* --------------------------------------------------------------- */
+
+  /* --------------------------- About Me -------------------------- */
+
   .App-about-me {
 
-    height: 5000px;
+    height: 5400px;
   }
 
   .App-about-me-container {
 
     width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .App-about-me-img-container {
+
+    flex-direction: column;
+  }
+
+  .App-about-me-img-container p {
+
+    width: 90%;
+  }
+
+  .App-about-me-img-caption {
+
+    flex-direction: column;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .App-about-me-img-caption:not(:hover) {
+
+    color: rgba(0, 0, 0, 1);
   }
 
   .App-projects {
 
-    height: 4500px;
+    height: 1500px;
   }
+
+  .App-projects-select-container  {
+
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 95%;
+
+  }
+
+  .App-projects-select-container-nav-select {
+
+    width: 200px;
+    height: 50px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  #languageOptions {
+
+    align-items: start;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-left: 3%;
+    font-size: smaller;
+  }
+
+  #languageOptions label {
+
+    margin-left: 5px;
+  }
+
+  .App-projects-select-container-link {
+
+    width: 170px;
+    height: 170px;
+    margin: 10px 20px;
+  }
+
+  .App-projects-select-container-item p {
+
+    position: absolute;
+    color: rgba(0, 0, 0, 0);
+  }
+
+  .App-projects-select-container-link:hover {
+
+    width: 175px;
+    height: 175px;
+  }
+
 }
+
+
 /* --------------------------------------------------------------- */
 
