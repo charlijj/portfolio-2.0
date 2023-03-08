@@ -456,7 +456,7 @@ export function checkSort(sort)
             }
         }
 
-        let project = document.getElementById(projectsObject[i].id);
+        let project = document.getElementById(projectsObject[i].id + "Link");
         project.classList.remove("animate-in", "animate-out");
 
         if (projectsObject[i].language.includes(sort) && allChecked)
@@ -464,13 +464,13 @@ export function checkSort(sort)
             project.classList.add("animate-out");
             projectsObject[i].show = false;
             setTimeout(()=>{ project.style.display = "none"; }, 400)
-  
         }
         else if(!allChecked)
         {
             project.classList.add("animate-in");
             projectsObject[i].show = true;
             project.style.display = "block";
+            project.style.position = "relative";
         }
     }
 }
@@ -535,6 +535,7 @@ export function sortBy() {
     }
 };
 
+
 export function projects()
 {
     const ctx = document.getElementById("projects-canvas").getContext("2d");
@@ -585,6 +586,7 @@ export function projects()
     }
     ctx.canvas.style.display = "none";
 }
+
 
 export function addModels ()
 {
