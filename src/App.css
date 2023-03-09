@@ -1,16 +1,19 @@
+* {
+  transition: color ease 0.2s;
+}
+
 .theme-button-container {
 
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 25%;
+  top: 0;
   right: 0;
   z-index: 2;
   color: rgba(0,0,0,0);
   font-size: 14px;
   font-weight: bold;
-  transition: color ease 0.3s;
 }
 
 .theme-button-container:hover {
@@ -28,7 +31,6 @@
   transition: opacity ease 0.3s;
 }
 
-
 .theme-button {
 
   display: flex;
@@ -39,7 +41,7 @@
   height: 50px;
   margin: 0;
 
-  background-color: rgb(212, 212, 212);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   transition: background-color ease 0.2s;
@@ -51,17 +53,12 @@
 }
 
 .theme-button:hover {
-  background-color: rgb(78, 78, 78);
-  color: #fff;
+  background-color: rgba(155, 155, 155, 0.5);
 }
 
-.theme-button img {
-  width: 50px;
-}
 .theme-button img:hover {
   width: 55px;
 }
-
 
 .App {
 
@@ -822,86 +819,97 @@ box-sizing: inherit;
 @media only screen and (max-width: 800px) {
 
   .theme-button-container {
-    color: #000;
+    align-items: start;
+  }
+
+  .theme-button-container:hover {
+    color: rgba(0, 0, 0, 0)
+  }
+  
+  #darkBody .theme-button-container:hover {
+    color: rgba(0, 0, 0, 0)
+  }
+  
+  .theme-button-container {
+    color: rgba(0, 0, 0, 0)
+  }
+
+  .theme-button {
+
+    width: 35px;
+    height: 35px;
+  }
+
+  .theme-button img {
+    width: 35px;
+  }
+
+  .theme-button:hover {
+    background-color: #fff;
+  }
+
+  .theme-button img:hover {
+    width: 35px;
   }
 
   .App-header-title {
-
     font-size: 3rem;
   }
   
   .App-header-subtitle {
-  
     font-size: 2rem;
   }
 
   .title {
-  
     font-size: 2rem;
   }
 
-  /* --------------------------------------------------------------- */
-
-  /* --------------------------- About Me -------------------------- */
-
   .App-about-me {
-
     height: 5400px;
   }
 
   .App-about-me-container {
-
     width: 90%;
     font-size: 0.9rem;
   }
 
   .App-about-me-img-container {
-
     flex-direction: column;
   }
 
   .App-about-me-img-container p {
-
     width: 90%;
   }
 
   .App-about-me-img-caption {
-
     flex-direction: column;
     color: rgba(0, 0, 0, 1);
   }
 
-  .App-about-me-img-caption:not(:hover) {
-
-    color: rgba(0, 0, 0, 1);
+  #darkBody .App-about-me-img-caption {
+    flex-direction: column;
+    color: #bdc2d3;
   }
 
   .App-projects {
-
     height: 1500px;
   }
 
   .App-projects-select-container  {
-
     align-items: start;
     justify-content: center;
     flex-wrap: wrap;
-
     width: 95%;
-
   }
 
   .App-projects-select-container-nav-select {
-
     width: 200px;
     height: 50px;
     margin-left: 5px;
-    text-align: center;
     font-size: 16px;
   }
 
   #languageOptions {
-
     align-items: start;
     justify-content: left;
     flex-wrap: wrap;
@@ -910,29 +918,47 @@ box-sizing: inherit;
   }
 
   #languageOptions label {
-
     margin-left: 5px;
   }
 
   .App-projects-select-container-link {
-
     width: 170px;
     height: 170px;
     margin: 10px 20px;
   }
 
   .App-projects-select-container-item p {
-
     position: absolute;
     color: rgba(0, 0, 0, 0);
   }
 
   .App-projects-select-container-link:hover {
-
     width: 175px;
     height: 175px;
   }
 
+}
+
+@media only screen and (max-width: 500px) {
+
+  .App-projects-select-container-nav {
+    height: 150px;
+  }
+
+  .App-projects-select-container-fake-nav {
+    height: 155px;
+  }
+  
+  .App-projects-select-container-link {
+    width: 150px;
+    height: 150px;
+    margin: 5px 20px;
+  }
+
+  .App-projects-select-container-link:hover {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 
