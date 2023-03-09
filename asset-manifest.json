@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "https://charlijj.github.io/portfolio-2.0/static/css/main.9f39276e.css",
+    "main.css": "https://charlijj.github.io/portfolio-2.0/static/css/main.535fccda.css",
     "main.js": "https://charlijj.github.io/portfolio-2.0/static/js/main.3970d913.js",
     "static/media/equalizer-background.gif": "https://charlijj.github.io/portfolio-2.0/static/media/equalizer-background.14b22e14d0ae72536b0a.gif",
     "index.html": "https://charlijj.github.io/portfolio-2.0/index.html",
-    "main.9f39276e.css.map": "https://charlijj.github.io/portfolio-2.0/static/css/main.9f39276e.css.map",
+    "main.535fccda.css.map": "https://charlijj.github.io/portfolio-2.0/static/css/main.535fccda.css.map",
     "main.3970d913.js.map": "https://charlijj.github.io/portfolio-2.0/static/js/main.3970d913.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f39276e.css",
+    "static/css/main.535fccda.css",
     "static/js/main.3970d913.js"
   ]
 }
