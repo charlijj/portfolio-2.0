@@ -16,6 +16,27 @@ function App() {
     }
   }, []);
 
+  const themeChange = () => {
+
+    const BODY = document.body;
+    const THEME_IMG = document.getElementById("themeImage");
+    const THEME_LABEL = document.getElementById("themeLabel");
+    let bodyID = BODY.id;
+    console.log(THEME_IMG.src)
+
+    if (bodyID == "body")
+    {
+      BODY.id = "darkBody";
+      THEME_IMG.src = process.env.PUBLIC_URL + "/img/light-mode.png";
+      THEME_LABEL.innerHTML = "GO LIGHT";
+    }
+    else
+    {
+      BODY.id = "body";
+      THEME_IMG.src = process.env.PUBLIC_URL + "/img/dark-mode.png";
+      THEME_LABEL.innerHTML = "GO DARK";
+    }
+  }
 
   const handleScroll = () => {
     if (document.querySelector(".App-header").getBoundingClientRect().top < 0) {
@@ -61,6 +82,13 @@ function App() {
   return (
 
     <div className="App">
+      <div className="theme-button-container">
+        <p className="theme-label" id="themeLabel">Go Dark</p>
+        <div className="theme-button" id="themeButton" onClick={themeChange}>
+          <img src={process.env.PUBLIC_URL + "/img/dark-mode.png"} alt="dark mode" id="themeImage"></img>
+        </div>
+      </div>
+
       <a id="top"></a>
       <header className="App-header">
         <div className="circle small"></div>

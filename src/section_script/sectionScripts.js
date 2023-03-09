@@ -192,7 +192,7 @@ export function aboutMe()
                 </div>
                 <p>One of the songs from my new EP</p>
             </div>
-            <img src=${process.env.PUBLIC_URL + "/img/danse-baby.gif"} alt="me" style="width: 70px;" id="danse-baby.gif" />
+            <img src=${process.env.PUBLIC_URL + "/img/danse-baby.gif"} alt="me" class="danse-baby" />
         </div>    
         <div class="line"></div>
         <h3>Art</h3>

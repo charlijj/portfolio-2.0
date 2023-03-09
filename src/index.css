@@ -1,4 +1,21 @@
-body {
+#body {
     margin: 0;
+    color: #000;
     background-image: radial-gradient(circle at center, rgba(237, 163, 255, 0.6) 0, rgba(200, 201, 255, 0.8), rgba(253, 210, 255, 0.8) 100%);
+}
+
+#body a {
+    color: #000;
+}
+
+#darkBody {
+    margin: 0;
+    color: #e7d5d5;
+    background-color: rgb(41, 41, 44);
+    background-image: radial-gradient(circle at center, rgba(0, 38, 163, 0.6) 0, rgba(0, 2, 92, 0.8), rgba(0, 0, 0, 0.8) 100%);
+}
+
+#darkBody a, #darkBody li, #darkBody li div::before {
+    color: #bdc2d3;
+    border-color: #bdc2d3;
 }
