@@ -115,7 +115,6 @@ export function tableOfContents()
             </li>
         </ul>
     `;
-
     tableOfContents.classList.add("animate-in"); 
 
     if (!ctx.canvas.parentNode.querySelector("h1")) {
@@ -169,8 +168,8 @@ export function aboutMe()
             <img src=${process.env.PUBLIC_URL + "/img/viu-logo.jpg"} alt="me" style="width: 150px;" id="viuLogo" />
             <p>I am currently studying computer science at Vancouver Islands University and am set to graduate with a Diploma in Computer Science in April of this year. </p>
         </div>
-        <p>I am interested in all computer science topics but most notably web development as I love the combination of artistry and technical skill. The creative aspects of front-end web development engage my inner designer and I love the process of going from a blank screen to a fully-fledged web application. I also find the back end of web development incredibly interesting, I enjoy technical problem-solving aspects of writing server-side code and the.</p>
-        <p>Ultimately, I plan on returning to university to continue my education in computer science after gaining practical experience in the industry. I am particularly interested the cyber society and would like to eventually specialize in that field.</p>
+        <p>I am interested in all computer science topics but most notably web development as I love the combination of artistry and technical skill. The creative aspects of front-end web development engage my inner designer and I love the process of going from a blank screen to a fully-fledged web application. I also find the back end of web development incredibly interesting, I enjoy the technical problem-solving aspects of writing secure server-side code as well.</p>
+        <p>Ultimately, I plan on returning to university to continue my education in computer science after gaining practical experience in the industry. I am particularly interested in web cyber security as it is a constantly expanding field that is becoming increasingly more important, and I would like to eventually specialize in this field.</p>
     `;
     Background.classList.add("animate-in", "App-about-me-container"); 
 
@@ -204,7 +203,7 @@ export function aboutMe()
             </div>
             <div class="App-about-me-img-caption">        
                 <img src=${process.env.PUBLIC_URL + "/img/my-pics/horne-lake.jpg"} alt="me" style="width: 150px;" id="horneLake" />
-                <p>Horne Lake beach</p>
+                <p>Lake day at secrete Horne Lake beach</p>
             </div>
             <div class="App-about-me-img-caption">        
                 <img src=${process.env.PUBLIC_URL + "/img/my-pics/fish.jpg"} alt="me" style="width: 150px;" id="fish" />
@@ -215,10 +214,10 @@ export function aboutMe()
         <div class="line"></div>
         <h3>Activities</h3>
         <div class="App-about-me-img-container">
-            <p>I'm an enthusiastic lover of the great outdoors, as long as the weather cooperates. Hiking and backpacking scenic trails all over Vancouver Island is one of my favorite activities, and I'm always looking to discover new places to explore. Additionally, I enjoy free diving, having been fortunate enough to experience the seemingly otherworldly scenes of both warm and cold water reefs.</p>
+            <p>I'm an enthusiastic lover of the outdoors, as long as the weather cooperates. Hiking and backpacking scenic trails all over Vancouver Island is one of my favorite activities, and I'm always looking to discover new places to explore. Additionally, I enjoy free diving, having been fortunate enough to experience the seemingly otherworldly scenes of both warm and cold water reefs.</p>
             <div class="App-about-me-img-caption">        
             <img src=${process.env.PUBLIC_URL + "/img/my-pics/nanaimo.jpg"} alt="me" style="width: 300px;" id="nanaimo" />
-            <p>View of Nanaimo from Roberts</p>
+            <p>View of Nanaimo from Roberts Roost</p>
         </div>
         </div>  
         <p>Furthermore, I play a few sports recreationally, including soccer, basketball, golf, and most racket sports. </p>
@@ -250,7 +249,7 @@ export function aboutMe()
     Resume.innerHTML = `
         <a id="Resume"></a>
         <h1 class="subtitle">My Resume</h1>
-        <p>View my Resume for a more concise list of information about me</p>
+        <p>View my Resume (still needs to be added) for a more concise list of information about me</p>
     `;
     Resume.classList.add("animate-in", "App-about-me-container"); 
 
@@ -274,7 +273,7 @@ export function aboutMe()
 PROJECTS FUNCTIONS
 --------------------------------------------------------------*/
 
-const projectsObject = [
+const PROJECTS_OBJECT = [
 
     {
         name: "Audio Visualizers",
@@ -433,13 +432,13 @@ const projectsObject = [
         rating: "1",
         desc: "A static website for a fictional pizza restaurant based in Greenland. It provides an online ordering service as well as information about the restaurant and menu.",
         img: "/img/trechecoPizza.jpg",
-        fullDesc: "This project is a static website for a fictional pizza restaurant based in Greenland. It provides an online ordering service as well as information about the restaurant and menu. This was my final project for CSCI115 as well as the first full website I ever made.",
+        fullDesc: "This project is a static website for a fictional pizza restaurant based in Greenland. It provides an online ordering service as well as information about the restaurant and menu. This was my final project for CSCI 115 Intro to Web Development as well as the first full website I ever made.",
         link: "https://github.com/charlijj/Mock-Pizza-Site",
         show: true
     }
 ];
 
-const NUMITEMS = projectsObject.length;
+const NUMITEMS = PROJECTS_OBJECT.length;
 
 export function checkSort(sort)
 {
@@ -447,30 +446,29 @@ export function checkSort(sort)
     {  
         let allChecked = true;
 
-        for (let j = 0; j < projectsObject[i].language.length; j++)
+        for (let j = 0; j < PROJECTS_OBJECT[i].language.length; j++)
         {
-            if (document.getElementById(projectsObject[i].language[j]).checked)
+            if (document.getElementById(PROJECTS_OBJECT[i].language[j]).checked)
             {
                 allChecked = false;
                 break;
             }
         }
 
-        let project = document.getElementById(projectsObject[i].id + "Link");
+        let project = document.getElementById(PROJECTS_OBJECT[i].id + "Link");
         project.classList.remove("animate-in", "animate-out");
 
-        if (projectsObject[i].language.includes(sort) && allChecked)
+        if (PROJECTS_OBJECT[i].language.includes(sort) && allChecked)
         {
             project.classList.add("animate-out");
-            projectsObject[i].show = false;
+            PROJECTS_OBJECT[i].show = false;
             setTimeout(()=>{ project.style.display = "none"; }, 400)
         }
         else if(!allChecked)
         {
             project.classList.add("animate-in");
-            projectsObject[i].show = true;
+            PROJECTS_OBJECT[i].show = true;
             project.style.display = "block";
-            project.style.position = "relative";
         }
     }
 }
@@ -484,31 +482,32 @@ export function sortBy() {
     {
         for (let i = 0; i < NUMITEMS; i++)
         {
-            if (projectsObject[i].show)
+            if (PROJECTS_OBJECT[i].show)
             {
                 try 
                 {
-                    document.getElementById(projectsObject[i].id + "Link").removeChild(document.getElementById(projectsObject[i].id));
-                    projects.removeChild(document.getElementById(projectsObject[i].id + "Link"));
+                    document.getElementById(PROJECTS_OBJECT[i].id + "Link").removeChild(document.getElementById(PROJECTS_OBJECT[i].id));
+                    projects.removeChild(document.getElementById(PROJECTS_OBJECT[i].id + "Link"));
                 }
                 catch(error)
                 {
                     alert("Please wait until projects have loaded before reordering.");
+                    console.log(error)
                     return;
                 }
 
                 const projectLink = document.createElement("a");
-                projectLink.setAttribute("href", "#" + projectsObject[i].id + "Modal");            
+                projectLink.setAttribute("href", "#" + PROJECTS_OBJECT[i].id + "Modal");            
                 projectLink.setAttribute("data-toggle", "modal");
-                projectLink.id = projectsObject[i].id + "Link";
+                projectLink.id = PROJECTS_OBJECT[i].id + "Link";
     
                 const projectsItem = document.createElement("div");
                 projectsItem.innerHTML = `
-                    <h3>${projectsObject[i].name}</h3>
-                    <p>${projectsObject[i].desc}</p>
+                    <h3>${PROJECTS_OBJECT[i].name}</h3>
+                    <p>${PROJECTS_OBJECT[i].desc}</p>
                 `;
-                projectsItem.id = projectsObject[i].id;
-                projectsItem.style.backgroundImage = 'url(' + process.env.PUBLIC_URL + projectsObject[i].img;
+                projectsItem.id = PROJECTS_OBJECT[i].id;
+                projectsItem.style.backgroundImage = 'url(' + process.env.PUBLIC_URL + PROJECTS_OBJECT[i].img;
                 projectsItem.classList.add("animate-in", "App-projects-select-container-item");
                 projectLink.classList.add("App-projects-select-container-link");
                 projectLink.appendChild(projectsItem);
@@ -520,17 +519,17 @@ export function sortBy() {
     
     if (sortByOption == "old")
     {
-        projectsObject.sort((a, b) => (new Date(a.date) - new Date(b.date)));
+        PROJECTS_OBJECT.sort((a, b) => (new Date(a.date) - new Date(b.date)));
         reorder();
     }
     if (sortByOption == "new")
     {
-        projectsObject.sort((a, b) => (new Date(b.date) - new Date(a.date)));
+        PROJECTS_OBJECT.sort((a, b) => (new Date(b.date) - new Date(a.date)));
         reorder();
     }
     if (sortByOption == "best")
     {
-        projectsObject.sort((a, b) => b.rating - a.rating);
+        PROJECTS_OBJECT.sort((a, b) => b.rating - a.rating);
         reorder();
     }
 };
@@ -560,17 +559,17 @@ export function projects()
         for (let i = 0; i < NUMITEMS; i++)
         {
             const projectLink = document.createElement("a");
-            projectLink.setAttribute("href", "#" + projectsObject[i].id + "Modal");            
+            projectLink.setAttribute("href", "#" + PROJECTS_OBJECT[i].id + "Modal");            
             projectLink.setAttribute("data-toggle", "modal");
-            projectLink.id = projectsObject[i].id + "Link";
+            projectLink.id = PROJECTS_OBJECT[i].id + "Link";
 
             const projectsItem = document.createElement("div");
             projectsItem.innerHTML = `
-                <h3>${projectsObject[i].name}</h3>
-                <p>${projectsObject[i].desc}</p>
+                <h3>${PROJECTS_OBJECT[i].name}</h3>
+                <p>${PROJECTS_OBJECT[i].desc}</p>
             `;
-            projectsItem.id = projectsObject[i].id;
-            projectsItem.style.backgroundImage = 'url(' + process.env.PUBLIC_URL + projectsObject[i].img;
+            projectsItem.id = PROJECTS_OBJECT[i].id;
+            projectsItem.style.backgroundImage = 'url(' + process.env.PUBLIC_URL + PROJECTS_OBJECT[i].img;
             projectsItem.classList.add("animate-in", "App-projects-select-container-item");
             projectLink.classList.add("App-projects-select-container-link");
             projectLink.appendChild(projectsItem);
@@ -600,34 +599,21 @@ export function addModels ()
             <div class="App-projects-modal-display">
             <a class="App-projects-modal-close" href="#Projects">&times;</a>
                 <div class="App-projects-modal-content">
-                    <h3>${projectsObject[i].name}</h3>
-                    <p>${projectsObject[i].fullDesc}</p>
-                    <img src=${process.env.PUBLIC_URL + projectsObject[i].img} style="width: 33%;" alt=${projectsObject[i].name} />
-                    <p>Click <a href=${projectsObject[i].link} target="_blank">here</a> to view source code</p>
+                    <h3>${PROJECTS_OBJECT[i].name}</h3>
+                    <p>${PROJECTS_OBJECT[i].fullDesc}</p>
+                    <img src=${process.env.PUBLIC_URL + PROJECTS_OBJECT[i].img} style="width: 33%;" alt=${PROJECTS_OBJECT[i].name} />
+                    <p>Click <a href=${PROJECTS_OBJECT[i].link} target="_blank">here</a> to view source code</p>
                 </div>        
             </div>        
         `;
-        projectModal.id = projectsObject[i].id + "Modal";
+        projectModal.id = PROJECTS_OBJECT[i].id + "Modal";
         projectModal.classList.add("App-projects-modal");
         modalContainer.appendChild(projectModal);
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export function audioVisualizer()
+/*
+function audioVisualizer()
 {
     const canvas = document.getElementById(`header-canvas`);
     const ctx = canvas.getContext(`2d`);
@@ -691,3 +677,4 @@ export function audioVisualizer()
     audio.play();
     animateFullRainbowBar();
 }
+*/

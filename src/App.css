@@ -327,6 +327,10 @@ Table Of Contents
   height: auto;
 }
 
+.App-about-me-img-container img {
+  border-radius: 10px;
+}
+
 .App-about-me-img-container p {
 
   width: 60%;
@@ -363,7 +367,7 @@ Table Of Contents
   width: 260px;
   height: 70px;
   margin-left: 20px;
-  padding: 0 5px;
+  border-radius: 10px;
 
   background-size: cover;
   background-position: center;
@@ -372,7 +376,14 @@ Table Of Contents
 
 .App-about-me-audio-container audio {
 
-  width: 100%;
+  width: 90%;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.App-about-me-audio-container audio::-webkit-media-controls-panel {
+
+  background-color: rgb(175, 175, 175);
 }
 
 .App-about-me-container img {
