@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "https://charlijj.github.io/portfolio-2.0/static/css/main.535fccda.css",
-    "main.js": "https://charlijj.github.io/portfolio-2.0/static/js/main.3970d913.js",
-    "static/media/equalizer-background.gif": "https://charlijj.github.io/portfolio-2.0/static/media/equalizer-background.14b22e14d0ae72536b0a.gif",
-    "index.html": "https://charlijj.github.io/portfolio-2.0/index.html",
-    "main.535fccda.css.map": "https://charlijj.github.io/portfolio-2.0/static/css/main.535fccda.css.map",
-    "main.3970d913.js.map": "https://charlijj.github.io/portfolio-2.0/static/js/main.3970d913.js.map"
+    "main.css": "https://jjcharlinski.ca/static/css/main.92cccab4.css",
+    "main.js": "https://jjcharlinski.ca/static/js/main.937dcc2b.js",
+    "static/media/equalizer-background.gif": "https://jjcharlinski.ca/static/media/equalizer-background.14b22e14d0ae72536b0a.gif",
+    "index.html": "https://jjcharlinski.ca/index.html",
+    "main.92cccab4.css.map": "https://jjcharlinski.ca/static/css/main.92cccab4.css.map",
+    "main.937dcc2b.js.map": "https://jjcharlinski.ca/static/js/main.937dcc2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.535fccda.css",
-    "static/js/main.3970d913.js"
+    "static/css/main.92cccab4.css",
+    "static/js/main.937dcc2b.js"
   ]
 }
