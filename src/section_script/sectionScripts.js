@@ -51,7 +51,7 @@ export function moveCircles()
 
         const angle = Math.random() * 2 * Math.PI;
 
-        let speed = (Math.random() * 10) / 4;
+        let speed = Math.round(((Math.random() * 10) / 4), 2);
 
         if (speed < 0.5)
         {
@@ -61,7 +61,6 @@ export function moveCircles()
         {
             speed = 2;
         }
-        console.log(speed)
         
         let deltaX = speed * Math.cos(angle);
         let deltaY = speed * Math.sin(angle);
@@ -112,9 +111,10 @@ export function tableOfContents()
                 <li><div class="level2"><a href="#Background">Background</a></div></li>
                 <li><div class="level2"><a href="#Hobbies">Hobbies</a></div>
                 <ul>
-                <li><div class="level3"><a href="#Hobbies">Music</a></div></li>
-                <li><div class="level3"><a href="#Hobbies">Art</a></div></li>
-                <li><div class="level3"><a href="#Hobbies">Activities</a></div></li>
+                <li><div class="level3"><a href="#Music">Music</a></div></li>
+                <li><div class="level3"><a href="#Art">Art</a></div></li>
+                <li><div class="level3"><a href="#Activities">Activities</a></div></li>
+                <li><div class="level3"><a href="#Entrepreneurship">Entrepreneurship</a></div></li>
                 </ul>
                 </li>
                 <li><div class="level2"><a href="#Skills">Skills</a></div></li>
@@ -192,6 +192,7 @@ export function aboutMe()
     Hobbies.innerHTML = `
         <a id="Hobbies"></a>
         <h1 class="subtitle">My Hobbies</h1>
+        <a id="Music"></a>
         <h3>Music</h3>
         <div class="App-about-me-img-container">
             <p>Music is my biggest hobby and I spend most of my free time on music-related activities like composing melodies, experimenting with sounds, and creating remixes of my favorite songs. I began my musical journey at age 10 with the piano and quickly fell in love with its sound. Later, I discovered an old Yamaha synthesizer and became captivated by the endless possibilities of creating unique sounds. Since then, my passion for music has continued to grow, and I've spent countless hours exploring new sounds and creating my own songs. The limitless possibilities of music have been a constant source of joy and inspiration for me.</p>
@@ -204,6 +205,7 @@ export function aboutMe()
             <img src=${process.env.PUBLIC_URL + "/img/danse-baby.gif"} alt="me" class="danse-baby" />
         </div>    
         <div class="line"></div>
+        <a id="Art"></a>
         <h3>Art</h3>
         <div class="App-about-me-img-container">
             <div class="App-about-me-img-caption">        
@@ -221,6 +223,7 @@ export function aboutMe()
             <p>I participate in a few art-related hobbies. Including painting, mostly in the style of cubism with acrylic and watercolors, my biggest inspirations are Picasso and ancient South American art.  Nature Photography, I like capturing scenic nature views typically during sunset. I also enjoy capturing wildlife photos whenever I get the opportunity. And art galleries, I love going to art galleries/shows as well as art museums to get inspiration from the creative works of others.</p>
         </div>
         <div class="line"></div>
+        <a id="Activities"></a>
         <h3>Activities</h3>
         <div class="App-about-me-img-container">
             <p>I'm an enthusiastic lover of the outdoors, as long as the weather cooperates. Hiking and backpacking scenic trails all over Vancouver Island is one of my favorite activities, and I'm always looking to discover new places to explore. Additionally, I enjoy free diving, having been fortunate enough to experience the seemingly otherworldly scenes of both warm and cold water reefs.</p>
@@ -231,9 +234,10 @@ export function aboutMe()
         </div>  
         <p>Furthermore, I play a few sports recreationally, including soccer, basketball, golf, and most racket sports. </p>
         <div class="line"></div>
+        <a id="Entrepreneurship"></a>
         <h3>Entrepreneurship</h3>
-        <p>I've always had an entrepreneurial mindset and have looked up to individuals who have achieved financial independence by creating their own businesses. I started my first business when I was 7 with my sister, we sold lemonade and painted rocks outside of the Coombs Market and made more money in one day than I had ever seen in my life. Ever since then, I knew entrepreneurship was something I would like to pursue.</p>
-        <p>The most successful business I ran was an IT support business while I was in high school. I noticed my community had a larger-than-average elderly population and saw the demand for quick and local tech support solutions. My friend and I decided to capitalize on this and we started to post flyers around town advertising our business. A month later we had over 30 clients and provided them with services such as TV and cable box setups, router setups, sound system setups, teaching them how to use their new device/computer, and any other low-level IT support they needed. We ran this business for about 2.5 years until we graduated and had to close up shop since we were moving away for university.</p>
+        <p>I've always had an entrepreneurial mindset and have looked up to individuals who have achieved financial independence from creating their own businesses. I started my first business with my sister when I was 6, we sold lemonade and painted rocks outside of the Coombs Market and made more money in one day than I had ever seen in my life. Ever since then, I knew entrepreneurship was something I would like to pursue.</p>
+        <p>The most successful business I ran was an IT support business I started while I was in high school. I noticed my community had a larger-than-average elderly population and saw the demand for local quick and assessable tech support solutions. My friend and I decided to capitalize on this and we started to post flyers around town advertising our business. A month later we had over 30 clients and provided them with services such as TV and cable box setups, router setups, sound system setups, teaching them how to use their new device/computer, and any other low-level IT support they needed. We ran this business for about 2.5 years until we graduated and had to close up shop since we were moving away for university.</p>
         <p>The following year after completing my first two terms of my computer science degree and failing to secure an internship, I decided to put my newfound knowledge to work and start a website design service. I noticed that many of the street vendors at the local markets lacked a website, so I decided to target this market. I offered incredibly cheap static websites that customers could customize by choosing a template and then picking the colors of and entering their own content. The biggest issue was that I did not have a web server that I could host off of so I had to help customers host their websites themselves which really limited the potential of the business. Overall it was a great learning experience and returned an adequate profit.</p>
         </div>  
     `;
@@ -245,17 +249,18 @@ export function aboutMe()
         <h1 class="subtitle">My Skills</h1>
         <p style="text-align=center;"><strong>From my time studying computer science topics I have developed the following skills:</strong></p>
         <div style="text-align: left;">
-        <p>General Programming: C++, C#, Python</p>
+        <p>General Programming: C++, C#, Python, VBA</p>
         <p>Scripting: Python, Bash, Make</p>
-        <p>Web Development: HTML5, CSS, PHP, JavaScript (Ajax, jQuery, React, APIs)</p>
-        <p>Web Frameworks: WordPress, custom Shopify stores, Django, Flask</p>
+        <p>Web Development: HTML5, CSS, SASS, PHP, JavaScript (Ajax, jQuery, React, APIs)</p>
+        <p>Web Frameworks: WordPress, Django, Flask, custom Shopify stores,</p>
         <p>Database Systems: SQL with MySQL, Oracle, and SQLite</p>
+        <p>Solid understanding of UI and UX design principles</p>
         <p>Solid understanding of the OSI model, TCP/IP, DNS, DHCP, Static IP, LAN/WAN, and network topologies</p>
         <p>Linux system client/server creation and maintenance (Arch, Debian, Ubuntu, Core)</p>
         <p>Automated testing (writing testing scripts, unit testing, integration testing)</p>
         <p>Proficient with Git and GitHub</p>
         <p>Proficient with Microsoft Excel and Word</p>
-        <p></p>
+        <p>Proficient with </p>
         </div>
     `;
     Skills.classList.add("animate-in", "App-about-me-container"); 
@@ -264,7 +269,7 @@ export function aboutMe()
     Resume.innerHTML = `
         <a id="Resume"></a>
         <h1 class="subtitle">My Resume</h1>
-        <p>View my Resume (still needs to be added) for a more concise list of information about me</p>
+        <p>View my <a href=${process.env.PUBLIC_URL + "/img/Jasper_Charlinski_Resume.pdf"} target="_blank" id="resume">Resume</a> for more information about my experience and education.</p>
     `;
     Resume.classList.add("animate-in", "App-about-me-container"); 
 
@@ -277,6 +282,12 @@ export function aboutMe()
         ctx.canvas.parentNode.appendChild(Hobbies, ctx.canvas);
         ctx.canvas.parentNode.appendChild(Skills, ctx.canvas);
         ctx.canvas.parentNode.appendChild(Resume, ctx.canvas);
+    }
+
+    const tocRect = document.querySelector(".App-table-of-contents").getBoundingClientRect();
+    if (tocRect.top < -(tocRect.height / 2))
+    {
+        ctx.canvas.parentNode.style.opacity = "1";
     }
 
     ctx.canvas.style.display = "none";
@@ -329,7 +340,7 @@ const PROJECTS_OBJECT = [
         rating: "4",
         desc: "A web design business I ran in the summer of 2021 in Parksville.",
         img: "/img/jjweb.jpg",
-        fullDesc: `In the summer of 2021, I started a small web design business called <a href="http://jjweb.ca" target="_blank">jjweb.ca</a> in Parksville. I focused on creating static websites for family and friends who were small street vendors. My goal was to help them establish an online presence and showcase their businesses to a wider audience. Although my services were limited to friends and family, I took pride in providing them with personalized websites that met their needs and preferences. Overall, it was a rewarding experience to see the positive impact my work had on their businesses.`,
+        fullDesc: `In the summer of 2021, I started a small web design business called <a href="http://jjweb.ca" target="_blank">jjweb.ca</a> in Parksville. I focused on creating static websites for family and friends who were small street vendors and business owners. My goal was to help them establish an online presence and showcase their businesses to a wider audience. Although my services were limited to static websites, I took pride in providing my customers with personalized websites that met their needs and preferences. Overall, it was a rewarding experience to see the positive impact my work had on their businesses.`,
         link: "https://github.com/jjwebdesign/JJ-Web-Design",
         show: true
     },

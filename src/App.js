@@ -41,11 +41,6 @@ function App() {
   const handleScroll = () => {
     if (document.querySelector(".App-header").getBoundingClientRect().top < 0) {
       tableOfContents();
-    }
-
-    const tocRect = document.querySelector(".App-table-of-contents").getBoundingClientRect();
-
-    if (tocRect.top < -(tocRect.height / 2)) {
       aboutMe();
     }
 
