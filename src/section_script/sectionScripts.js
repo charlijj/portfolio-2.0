@@ -51,8 +51,18 @@ export function moveCircles()
 
         const angle = Math.random() * 2 * Math.PI;
 
-        const speed = (Math.random() * 10) / 4; 
+        let speed = (Math.random() * 10) / 4;
 
+        if (speed < 0.5)
+        {
+            speed = 0.5;
+        }
+        else if (speed > 2)
+        {
+            speed = 2;
+        }
+        console.log(speed)
+        
         let deltaX = speed * Math.cos(angle);
         let deltaY = speed * Math.sin(angle);
 
@@ -183,7 +193,6 @@ export function aboutMe()
         <a id="Hobbies"></a>
         <h1 class="subtitle">My Hobbies</h1>
         <h3>Music</h3>
-
         <div class="App-about-me-img-container">
             <p>Music is my biggest hobby and I spend most of my free time on music-related activities like composing melodies, experimenting with sounds, and creating remixes of my favorite songs. I began my musical journey at age 10 with the piano and quickly fell in love with its sound. Later, I discovered an old Yamaha synthesizer and became captivated by the endless possibilities of creating unique sounds. Since then, my passion for music has continued to grow, and I've spent countless hours exploring new sounds and creating my own songs. The limitless possibilities of music have been a constant source of joy and inspiration for me.</p>
             <div class="App-about-me-img-caption">
@@ -216,11 +225,17 @@ export function aboutMe()
         <div class="App-about-me-img-container">
             <p>I'm an enthusiastic lover of the outdoors, as long as the weather cooperates. Hiking and backpacking scenic trails all over Vancouver Island is one of my favorite activities, and I'm always looking to discover new places to explore. Additionally, I enjoy free diving, having been fortunate enough to experience the seemingly otherworldly scenes of both warm and cold water reefs.</p>
             <div class="App-about-me-img-caption">        
-            <img src=${process.env.PUBLIC_URL + "/img/my-pics/nanaimo.jpg"} alt="me" style="width: 300px;" id="nanaimo" />
-            <p>View of Nanaimo from Roberts Roost</p>
-        </div>
+                <img src=${process.env.PUBLIC_URL + "/img/my-pics/nanaimo.jpg"} alt="me" style="width: 300px;" id="nanaimo" />
+                <p>View of Nanaimo from Roberts Roost</p>
+            </div>
         </div>  
         <p>Furthermore, I play a few sports recreationally, including soccer, basketball, golf, and most racket sports. </p>
+        <div class="line"></div>
+        <h3>Entrepreneurship</h3>
+        <p>I've always had an entrepreneurial mindset and have looked up to individuals who have achieved financial independence by creating their own businesses. I started my first business when I was 7 with my sister, we sold lemonade and painted rocks outside of the Coombs Market and made more money in one day than I had ever seen in my life. Ever since then, I knew entrepreneurship was something I would like to pursue.</p>
+        <p>The most successful business I ran was an IT support business while I was in high school. I noticed my community had a larger-than-average elderly population and saw the demand for quick and local tech support solutions. My friend and I decided to capitalize on this and we started to post flyers around town advertising our business. A month later we had over 30 clients and provided them with services such as TV and cable box setups, router setups, sound system setups, teaching them how to use their new device/computer, and any other low-level IT support they needed. We ran this business for about 2.5 years until we graduated and had to close up shop since we were moving away for university.</p>
+        <p>The following year after completing my first two terms of my computer science degree and failing to secure an internship, I decided to put my newfound knowledge to work and start a website design service. I noticed that many of the street vendors at the local markets lacked a website, so I decided to target this market. I offered incredibly cheap static websites that customers could customize by choosing a template and then picking the colors of and entering their own content. The biggest issue was that I did not have a web server that I could host off of so I had to help customers host their websites themselves which really limited the potential of the business. Overall it was a great learning experience and returned an adequate profit.</p>
+        </div>  
     `;
     Hobbies.classList.add("animate-in", "App-about-me-container"); 
 
@@ -233,7 +248,7 @@ export function aboutMe()
         <p>General Programming: C++, C#, Python</p>
         <p>Scripting: Python, Bash, Make</p>
         <p>Web Development: HTML5, CSS, PHP, JavaScript (Ajax, jQuery, React, APIs)</p>
-        <p>Web Frameworks: custom WordPress themes, WooCommerce, custom Shopify stores, Django</p>
+        <p>Web Frameworks: WordPress, custom Shopify stores, Django, Flask</p>
         <p>Database Systems: SQL with MySQL, Oracle, and SQLite</p>
         <p>Solid understanding of the OSI model, TCP/IP, DNS, DHCP, Static IP, LAN/WAN, and network topologies</p>
         <p>Linux system client/server creation and maintenance (Arch, Debian, Ubuntu, Core)</p>

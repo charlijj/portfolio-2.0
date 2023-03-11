@@ -150,10 +150,6 @@ function App() {
                 Racket
               </label>
               <label>
-                <input type="checkbox" name="WordPress" id="WordPress" checked={checkedBoxes["WordPress"]} onChange={handleCheckboxChange} />
-                WordPress
-              </label>
-              <label>
                 <input type="checkbox" name="PHP" id="PHP" checked={checkedBoxes["PHP"]} onChange={handleCheckboxChange} />
                 PHP
               </label>
@@ -166,22 +162,21 @@ function App() {
         </div>
         <div id="modalContainer"></div>
       </div>
-      <footer className="footer">
-
-        <div className="footer-Link">
+      <footer className="footer" id="footer">
+        <div className="footer-link-container">
           <p>Connect with me on Linkedin! : </p>
           <a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank">&nbsp;Jasper Charlinski</a>
-          <a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank"><img src={process.env.PUBLIC_URL + "/img/linkedIn-Icon.png"}alt="linkedin-icon" className="footer-Link-img"></img></a>
+          <a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank"><img src={process.env.PUBLIC_URL + "/img/linkedIn-Icon.png"}alt="linkedin-icon" className="footer-link-img"></img></a>
         </div>
-        <div className="footer-Link">
+        <div className="footer-link-container">
           <p>Send me an Email to get in contact : </p>
           <a href="mailto:jjcharlinski@gmail.com">&nbsp;jjcharlinski@gmail.com</a>
-          <a href="mailto:jjcharlinski@gmail.com"><img src={process.env.PUBLIC_URL + "/img/mail-Icon.png"}alt="email-icon" className="footer-Link-mail"></img></a>
+          <a href="mailto:jjcharlinski@gmail.com"><img src={process.env.PUBLIC_URL + "/img/mail-Icon.png"}alt="email-icon" className="footer-link-mail"></img></a>
         </div>
-        <div className="footer-Link">
+        <div className="footer-link-container">
           <p>To see more of my projects visit my GitHub : </p>
           <a href="https://github.com/charlijj" target="_blank">&nbsp;charlijj</a>
-          <a href="https://github.com/charlijj" target="_blank"><img src={process.env.PUBLIC_URL + "/img/github-Icon.png"}alt="github-icon" className="footer-Link-img"></img></a>
+          <a href="https://github.com/charlijj" target="_blank"><img src={process.env.PUBLIC_URL + "/img/github-Icon.png"}alt="github-icon" className="footer-link-img"></img></a>
         </div>
         <p>View <a href="https://github.com/charlijj/portfolio-2.0" target="_blank"><strong>source code</strong></a> for this website</p>
         <p>Jasper Charlinski, Feb 16th 2023 &copy;</p>

@@ -107,7 +107,7 @@
   font-size: smaller;
 }
 
-.footer-Link {
+.footer-link-container {
 
   display: flex;
   align-items: center;
@@ -116,7 +116,7 @@
   font-size: 1em;
 }
 
-.footer a {
+#footer a {
 
   text-decoration: none;
   color: #000;
@@ -124,17 +124,35 @@
   transition: color ease 0.2s;
 }
 
-.footer a:visited {
+#footer a:visited {
 
   color: #2e2e2e;
 }
 
-.footer a:hover {
+#footer a:hover {
 
   color: #a3a3a3;
 }
 
-.footer-Link-img {
+#darkBody #footer a {
+
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color ease 0.2s;
+}
+
+#darkBody #footer a:visited {
+
+  color: #949494;
+}
+
+#darkBody #footer a:hover {
+
+  color: #555555;
+}
+
+.footer-link-img {
 
   display: flex;
   align-items: center;
@@ -149,7 +167,7 @@
   transition: background-color ease 0.2s;
 }
 
-.footer-Link-mail {
+.footer-link-mail {
 
   width: 35px;
   height: 35px;
@@ -158,12 +176,12 @@
 
 
 }
-.footer-Link-mail:hover {
+.footer-link-mail:hover {
   width: 38px;
   height: 38px;
 }
 
-.footer-Link-img:hover {
+.footer-link-img:hover {
 
   background-color: #000;
 }
@@ -354,7 +372,7 @@ Table Of Contents
   flex-direction: column;
 
   width: 100%;
-  height: 3500px;
+  height: 4150px;
 
   box-sizing: border-box;
   border-bottom: 3px solid rgba(0, 0, 0, 0.4);
@@ -370,7 +388,7 @@ Table Of Contents
   width: 70%;
   height: auto;
   margin-top: 50px;
-  padding: 15px 10px;
+  padding: 15px 20px;
 
   border: 1px solid rgba(0, 0, 0, 0.4);
   background-color: rgba(255, 255, 255, 0.3);
@@ -761,25 +779,6 @@ box-sizing: inherit;
   display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -------------------------- Animations ------------------------- */
 .animate-in {
   
@@ -835,7 +834,6 @@ box-sizing: inherit;
   }
 
   .theme-button {
-
     width: 35px;
     height: 35px;
   }
@@ -865,7 +863,7 @@ box-sizing: inherit;
   }
 
   .App-about-me {
-    height: 5400px;
+    height: 6300px;
   }
 
   .App-about-me-container {
