@@ -21,7 +21,7 @@ function load_game(load) {
   const score = document.getElementById("scoreDisplay");
   const ctx = mainCVS.getContext("2d");
   ctx.imageSmoothingEnabled = true;
-  
+
   class InputHandler {
     constructor() {
       this.keys = {};
@@ -65,9 +65,6 @@ function load_game(load) {
       this.y = this.gameHeight - this.height * 2;
       this.speed = 0;
       this.yVelocity = 0;
-
-      // This variable is used to break out of the animation loop to prevent zombie processes.
-      this.die = false;
     }
 
     draw() {
@@ -157,7 +154,7 @@ function load_game(load) {
     }
 
     createAsteroids() {
-      // constructor(gameWidth, gameHeight, width, x, y, speed)
+      // constructor(gameWidth, gameHeight, width, x, y, speed, reloadTime)
       this.smallAsteroid1 = new Asteroid(
         this.gameWidth,
         this.gameHeight,
@@ -232,14 +229,14 @@ function load_game(load) {
   }
 
   class Asteroid {
-    constructor(gameWidth, gameHeight, width, x, y, speed, reload) {
+    constructor(gameWidth, gameHeight, width, x, y, speed, reloadTime) {
       this.gameWidth = gameWidth;
       this.gameHeight = gameHeight;
       this.asteroidWidth = width;
       this.asteroidY = y;
       this.asteroidX = x;
       this.asteroidSpeed = speed;
-      this.reload = reload;
+      this.reload = reloadTime;
     }
 
     draw() {
@@ -303,11 +300,15 @@ function load_game(load) {
 
   function end_game(score) {
     window.localStorage.setItem("prevScore", score);
+
+    if (!window.localStorage.getItem("highScore")) {
+      window.localStorage.setItem("highScore", "0");
+    }
+
     let highScore = parseInt(window.localStorage.getItem("highScore"));
     score = parseInt(score);
 
     if (score > highScore) {
-      console.log("new high score");
       window.localStorage.setItem("highScore", score);
     }
     ctx.clearRect(0, 0, mainCVS.width, mainCVS.height);
