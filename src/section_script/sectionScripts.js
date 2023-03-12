@@ -260,7 +260,6 @@ export function aboutMe()
         <p>Automated testing (writing testing scripts, unit testing, integration testing)</p>
         <p>Proficient with Git and GitHub</p>
         <p>Proficient with Microsoft Excel and Word</p>
-        <p>Proficient with </p>
         </div>
     `;
     Skills.classList.add("animate-in", "App-about-me-container"); 
@@ -340,7 +339,7 @@ const PROJECTS_OBJECT = [
         rating: "4",
         desc: "A web design business I ran in the summer of 2021 in Parksville.",
         img: "/img/jjweb.jpg",
-        fullDesc: `In the summer of 2021, I started a small web design business called <a href="http://jjweb.ca" target="_blank">jjweb.ca</a> in Parksville. I focused on creating static websites for family and friends who were small street vendors and business owners. My goal was to help them establish an online presence and showcase their businesses to a wider audience. Although my services were limited to static websites, I took pride in providing my customers with personalized websites that met their needs and preferences. Overall, it was a rewarding experience to see the positive impact my work had on their businesses.`,
+        fullDesc: `In the summer of 2021, I started a small web design business called <a href="https://jjweb.ca" target="_blank">jjweb.ca</a> in Parksville. I focused on creating static websites for family and friends who were small street vendors and business owners. My goal was to help them establish an online presence and showcase their businesses to a wider audience. Although my services were limited to static websites, I took pride in providing my customers with personalized websites that met their needs and preferences. Overall, it was a rewarding experience to see the positive impact my work had on their businesses.`,
         link: "https://github.com/jjwebdesign/JJ-Web-Design",
         show: true
     },

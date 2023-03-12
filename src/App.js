@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
+import './game.css';
 import { moveCircles, headerTitle, tableOfContents, aboutMe, projects, sortBy, checkSort, addModels } from './section_script/sectionScripts.js';
+import { run_game } from "./section_script/game";
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
       window.removeEventListener('scroll', handleScroll);
     }
   }, []);
+
+
 
   const themeChange = () => {
 
@@ -48,6 +52,23 @@ function App() {
 
     if (abtmeRect.top < -(abtmeRect.height / 1.2)) {
       projects();
+    }
+  }
+
+  const gameCanvasStyle = {
+    backgroundImage: `url(${process.env.PUBLIC_URL}/img/game/background.gif)`,
+  };
+  const startStopGame = () => {
+
+    const startStopButton = document.getElementById("gameStartStopButton");
+  
+    if (startStopButton.value == "Start")
+    {
+      run_game(true);
+    }
+    else
+    {
+      run_game(false)
     }
   }
 
@@ -107,6 +128,22 @@ function App() {
       <div className="App-about-me">
         <canvas id="about-me-canvas"></canvas>
       </div>
+
+      <a id="Game"></a>
+      <div className="App-game">
+        <div id="gameNavBar">
+          <input type="button" id="gameStartStopButton" value="Start" readOnly onClick={startStopGame}/>
+          <div className="game-header"><p>Asteroid Field</p></div>
+          <input type="text" value="0" id="scoreDisplay" readOnly/>
+        </div>
+        <div id="gameMenu" className="animate-in">
+          <p>Press the start button to play</p>
+          <p id="gamePrevScore">Your Score: {window.localStorage.getItem("prevScore")}</p>
+          <p id="gameHighScore">High Score: {window.localStorage.getItem("highScore")}</p>
+        </div>
+        <canvas id="game-canvas" style={gameCanvasStyle}></canvas>
+      </div>
+      <div className="line"></div>
       <a id="Projects"></a>
       <div className="App-projects">
         <canvas id="projects-canvas"></canvas>
@@ -118,7 +155,7 @@ function App() {
               <option value="new">Date - New</option>
               <option value="old">Date - Old</option>
             </select>
-            <div id="languageOptions" className='animate-in checkbox-wrapper-13'>
+            <div id="languageOptions" className="animate-in checkbox-wrapper-13">
               <label>
               <input type="checkbox" name="C++" id='C++' checked={checkedBoxes["C++"]} onChange={handleCheckboxChange} />
               C++
