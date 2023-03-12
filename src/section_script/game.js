@@ -1,6 +1,10 @@
 export function run_game(start) {
   const startStopButton = document.getElementById("gameStartStopButton");
 
+  if (window.innerWidth < 1200) {
+    load_game(false);
+    load_menu(false);
+  }
   if (start) {
     startStopButton.value = "Stop";
     load_menu(false);
@@ -16,7 +20,8 @@ function load_game(load) {
   const mainCVS = document.getElementById("game-canvas");
   const score = document.getElementById("scoreDisplay");
   const ctx = mainCVS.getContext("2d");
-
+  ctx.imageSmoothingEnabled = true;
+  
   class InputHandler {
     constructor() {
       this.keys = {};
@@ -54,8 +59,8 @@ function load_game(load) {
       this.playerImage.src = process.env.PUBLIC_URL + "/img/game/spaceship.png";
       this.gameWidth = gameWidth;
       this.gameHeight = gameHeight;
-      this.width = 30;
-      this.height = 20;
+      this.width = 20;
+      this.height = 40;
       this.x = gameWidth / 2 - this.width / 2;
       this.y = this.gameHeight - this.height * 2;
       this.speed = 0;
@@ -133,19 +138,19 @@ function load_game(load) {
 
       this.spawnTimeout = true;
 
-      this.smallAsteroidWidth = 15;
+      this.smallAsteroidWidth = 25;
       this.smallAsteroidSpeed = 5;
       this.smallAsteroidReload = -200;
       this.smallAsteroid1 = null;
       this.smallAsteroid2 = null;
 
-      this.medAsteroidWidth = 25;
+      this.medAsteroidWidth = 35;
       this.medAsteroidSpeed = 3;
       this.medAsteroidReload = -100;
       this.medAsteroid1 = null;
       this.medAsteroid2 = null;
 
-      this.bigAsteroidWidth = 35;
+      this.bigAsteroidWidth = 50;
       this.bigAsteroidSpeed = 2;
       this.bigAsteroidReload = -100;
       this.bigAsteroid = null;
@@ -241,10 +246,10 @@ function load_game(load) {
       if (this.asteroidX == 0) {
         this.asteroidX = Math.random() * this.gameWidth;
 
-        if (this.asteroidX < 75) {
-          this.asteroidX = 75;
-        } else if (this.asteroidX > this.gameWidth - 90) {
-          this.asteroidX = this.gameWidth - 90;
+        if (this.asteroidX < this.asteroidWidth) {
+          this.asteroidX = this.asteroidWidth;
+        } else if (this.asteroidX > this.gameWidth - this.asteroidWidth) {
+          this.asteroidX = this.gameWidth - this.asteroidWidth;
         }
       }
 
@@ -266,14 +271,14 @@ function load_game(load) {
   }
 
   if (load) {
-    const Input = new InputHandler();
+    const input = new InputHandler();
     const player = new Player(mainCVS.width, mainCVS.height);
     const asteroids = new AsteroidsCaller(mainCVS.width, mainCVS.height);
 
     function animate() {
       ctx.clearRect(0, 0, mainCVS.width, mainCVS.height);
       player.draw(ctx, null);
-      player.update(Input);
+      player.update(input);
       asteroids.draw(ctx, player);
 
       if (
@@ -297,13 +302,15 @@ function load_game(load) {
   }
 
   function end_game(score) {
-    let highScore = window.localStorage.getItem("highScore");
     window.localStorage.setItem("prevScore", score);
+    let highScore = parseInt(window.localStorage.getItem("highScore"));
+    score = parseInt(score);
 
-    if (score.value > highScore) {
+    if (score > highScore) {
+      console.log("new high score");
       window.localStorage.setItem("highScore", score);
     }
-    
+    ctx.clearRect(0, 0, mainCVS.width, mainCVS.height);
     window.location.reload();
   }
 }
@@ -312,8 +319,8 @@ function load_menu(load) {
   const menu = document.getElementById("gameMenu");
 
   if (load) {
-    menu.style.display = "flex";
+    menu.style.opacity = "1";
   } else {
-    menu.style.display = "none";
+    menu.style.opacity = "0";
   }
 }

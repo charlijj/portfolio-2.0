@@ -12,7 +12,7 @@ function App() {
     addModels();
 
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
@@ -129,17 +129,18 @@ function App() {
         <canvas id="about-me-canvas"></canvas>
       </div>
 
-      <a id="Game"></a>
       <div className="App-game">
         <div id="gameNavBar">
           <input type="button" id="gameStartStopButton" value="Start" readOnly onClick={startStopGame}/>
           <div className="game-header"><p>Asteroid Field</p></div>
           <input type="text" value="0" id="scoreDisplay" readOnly/>
         </div>
-        <div id="gameMenu" className="animate-in">
-          <p>Press the start button to play</p>
+        <div id="gameMenu">
+          <p>Press the Start Button to Play</p>
+          <div className="line"></div>
           <p id="gamePrevScore">Your Score: {window.localStorage.getItem("prevScore")}</p>
           <p id="gameHighScore">High Score: {window.localStorage.getItem("highScore")}</p>
+          <p className="game-controls">Move with WASD or Arrow Keys</p>
         </div>
         <canvas id="game-canvas" style={gameCanvasStyle}></canvas>
       </div>
