@@ -191,7 +191,7 @@ HEADER
   position: absolute;
   border-radius: 50%;
   z-index: -1;
-  transition: transform 0.2s ease-in-out;
+  transition: left 0.05s ease, top 0.05s ease;
 }
 
 .small {

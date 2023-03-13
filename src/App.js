@@ -49,8 +49,13 @@ function App() {
     }
 
     const abtmeRect = document.querySelector(".App-about-me").getBoundingClientRect();
+    const gameRect = document.querySelector(".App-game").getBoundingClientRect();
 
-    if (abtmeRect.top < -(abtmeRect.height / 1.2)) {
+    if (window.innerWidth > 1280 && gameRect.top < -gameRect.height / 2) {
+      projects();
+    }
+    else if (window.innerWidth < 1280 && abtmeRect.bottom < 100)
+    {
       projects();
     }
   }
