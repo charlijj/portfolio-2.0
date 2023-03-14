@@ -299,7 +299,9 @@ export function aboutMe() {
   const tocRect = document
     .querySelector(".App-table-of-contents")
     .getBoundingClientRect();
+
   if (tocRect.top < -(tocRect.height / 2)) {
+    ctx.canvas.parentNode.style.scale = "1";
     ctx.canvas.parentNode.style.opacity = "1";
   }
 

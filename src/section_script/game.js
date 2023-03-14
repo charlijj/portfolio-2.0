@@ -134,6 +134,7 @@ function load_game(load) {
       this.gameHeight = gameHeight;
 
       this.spawnTimeout = true;
+      this.spawnTimeoutDistance = 1000;
 
       this.smallAsteroidWidth = 25;
       this.smallAsteroidSpeed = 5;
@@ -143,14 +144,20 @@ function load_game(load) {
 
       this.medAsteroidWidth = 35;
       this.medAsteroidSpeed = 3;
-      this.medAsteroidReload = -100;
+      this.medAsteroidReload = -150;
       this.medAsteroid1 = null;
       this.medAsteroid2 = null;
 
       this.bigAsteroidWidth = 50;
       this.bigAsteroidSpeed = 2;
       this.bigAsteroidReload = -100;
-      this.bigAsteroid = null;
+      this.bigAsteroid1 = null;
+      this.bigAsteroid2 = null;
+
+      this.massiveAsteroidWidth = 70;
+      this.massiveAsteroidSpeed = 1.5;
+      this.massiveAsteroidReload = -200;
+      this.massiveAsteroid = null;
     }
 
     createAsteroids() {
@@ -191,7 +198,7 @@ function load_game(load) {
         this.medAsteroidSpeed,
         this.medAsteroidReload
       );
-      this.bigAsteroid = new Asteroid(
+      this.bigAsteroid1 = new Asteroid(
         this.gameWidth,
         this.gameHeight,
         this.bigAsteroidWidth,
@@ -200,6 +207,26 @@ function load_game(load) {
         this.bigAsteroidSpeed,
         this.bigAsteroidReload
       );
+
+      this.bigAsteroid2 = new Asteroid(
+        this.gameWidth,
+        this.gameHeight,
+        this.bigAsteroidWidth,
+        0,
+        0,
+        this.bigAsteroidSpeed,
+        this.bigAsteroidReload
+      );
+
+      this.massiveAsteroid = new Asteroid(
+        this.gameWidth,
+        this.gameHeight,
+        this.massiveAsteroidWidth,
+        0,
+        0,
+        this.massiveAsteroidSpeed,
+        this.massiveAsteroidReload
+      );
     }
 
     draw() {
@@ -207,24 +234,47 @@ function load_game(load) {
         this.createAsteroids();
 
         this.smallAsteroid1.asteroidY -=
-          this.smallAsteroidReload - Math.random() * 1000;
+          this.smallAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
         this.smallAsteroid2.asteroidY -=
-          this.smallAsteroidReload - Math.random() * 1000;
+          this.smallAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
         this.medAsteroid1.asteroidY -=
-          this.medAsteroidReload - Math.random() * 1000;
+          this.medAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
         this.medAsteroid2.asteroidY -=
-          this.medAsteroidReload - Math.random() * 1000;
-        this.bigAsteroid.asteroidY -=
-          this.bigAsteroidReload - Math.random() * 1000;
+          this.medAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
+        this.bigAsteroid1.asteroidY -=
+          this.bigAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
+        this.bigAsteroid2.asteroidY -=
+          this.bigAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
+        this.massiveAsteroid.asteroidY -=
+          this.bigAsteroidReload -
+          Math.random() * 1000 -
+          this.spawnTimeoutDistance;
 
         this.spawnTimeout = false;
       }
 
       this.smallAsteroid1.draw();
-      this.smallAsteroid2.draw();
       this.medAsteroid1.draw();
-      this.medAsteroid2.draw();
-      this.bigAsteroid.draw();
+      this.bigAsteroid1.draw();
+
+      if (score.value > 1000) {
+        this.smallAsteroid2.draw();
+        this.medAsteroid2.draw();
+        this.bigAsteroid2.draw();
+        this.massiveAsteroid.draw();
+      }
     }
   }
 
@@ -279,7 +329,9 @@ function load_game(load) {
       asteroids.draw(ctx, player);
 
       if (
-        player.detectCollision(asteroids.bigAsteroid) ||
+        player.detectCollision(asteroids.massiveAsteroid) ||
+        player.detectCollision(asteroids.bigAsteroid1) ||
+        player.detectCollision(asteroids.bigAsteroid2) ||
         player.detectCollision(asteroids.smallAsteroid1) ||
         player.detectCollision(asteroids.smallAsteroid2) ||
         player.detectCollision(asteroids.medAsteroid1) ||
@@ -311,6 +363,7 @@ function load_game(load) {
     if (score > highScore) {
       window.localStorage.setItem("highScore", score);
     }
+
     ctx.clearRect(0, 0, mainCVS.width, mainCVS.height);
     window.location.reload();
   }
