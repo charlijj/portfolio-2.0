@@ -408,11 +408,13 @@ Table Of Contents
   font-size: small;
 
   color: rgba(0, 0, 0, 0);
-  transition: color ease 0.2s;
+  transition: color ease 0.2s, transform ease 0.2s;
+  animation: hover 3s ease-in-out infinite;
 }
 
 .App-about-me-img-caption:hover {
   color: rgba(0, 0, 0, 1);
+  animation: stop-hover 0.3s ease-in-out infinite;
 }
 
 #darkBody .App-about-me-img-caption:hover {
@@ -771,9 +773,29 @@ Table Of Contents
     opacity: 0;
     transform: scale(0.8);
   }
-  
-  
+
 }
+
+@keyframes hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes stop-hover {
+  to {
+    transform: translateY(0);
+  }
+}
+
+  
+
 /* --------------------------------------------------------------- */
 
 /* ---------------------- Screen Size Adjust --------------------- */

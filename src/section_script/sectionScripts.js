@@ -173,11 +173,14 @@ export function aboutMe() {
             I am also a creative individual and like to express my personality, whether it's through programming, music, or art, I am always looking for new ways to express myself creatively.
         </p>
         <div class="line"></div>
-        <div class="App-about-me-img-container" style="margin: 10px 5px 0 0;">
+        <div class="App-about-me-img-container" style="margin-top: 30px;">
+          <div class="App-about-me-img-caption">
+            
             <img src=${
               process.env.PUBLIC_URL + "/img/viu-logo.jpg"
             } alt="me" style="width: 150px;" id="viuLogo" />
-            <p>I am currently studying computer science at Vancouver Islands University and am set to graduate with a Diploma in Computer Science in April of this year. </p>
+          </div>
+          <p>I am currently studying computer science at Vancouver Islands University and am set to graduate with a Diploma in Computer Science in April of this year. </p>
         </div>
         <p>I am interested in all computer science topics but most notably web development as I love the combination of artistry and technical skill. The creative aspects of front-end web development engage my inner designer and I love the process of going from a blank screen to a fully-fledged web application. I also find the back end of web development incredibly interesting, I enjoy the technical problem-solving aspects of writing secure server-side code as well.</p>
         <p>Ultimately, I plan on returning to university to continue my education in computer science after gaining practical experience in the industry. I am particularly interested in web cyber security as it is a constantly expanding field that is becoming increasingly more important, and I would like to eventually specialize in this field.</p>

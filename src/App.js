@@ -12,12 +12,17 @@ function App() {
     addModels();
 
     window.addEventListener('scroll', handleScroll);
+    const theme = window.localStorage.getItem("theme");
+    if (theme === "dark")
+    {
+      document.body.id = "body";
+      themeChange();
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
   }, []);
-
 
 
   const themeChange = () => {
@@ -33,12 +38,14 @@ function App() {
       BODY.id = "darkBody";
       THEME_IMG.src = process.env.PUBLIC_URL + "/img/light-mode.png";
       THEME_LABEL.innerHTML = "GO LIGHT";
+      window.localStorage.setItem("theme", "dark");
     }
     else
     {
       BODY.id = "body";
       THEME_IMG.src = process.env.PUBLIC_URL + "/img/dark-mode.png";
       THEME_LABEL.innerHTML = "GO DARK";
+      window.localStorage.setItem("theme", "light");
     }
   }
 

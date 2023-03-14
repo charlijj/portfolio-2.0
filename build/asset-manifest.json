@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "https://jjcharlinski.ca/static/css/main.1f7654cf.css",
-    "main.js": "https://jjcharlinski.ca/static/js/main.09d9c0b9.js",
+    "main.css": "https://jjcharlinski.ca/static/css/main.cdb4d351.css",
+    "main.js": "https://jjcharlinski.ca/static/js/main.5025f91d.js",
     "static/media/equalizer-background.gif": "https://jjcharlinski.ca/static/media/equalizer-background.14b22e14d0ae72536b0a.gif",
     "index.html": "https://jjcharlinski.ca/index.html",
-    "main.1f7654cf.css.map": "https://jjcharlinski.ca/static/css/main.1f7654cf.css.map",
-    "main.09d9c0b9.js.map": "https://jjcharlinski.ca/static/js/main.09d9c0b9.js.map"
+    "main.cdb4d351.css.map": "https://jjcharlinski.ca/static/css/main.cdb4d351.css.map",
+    "main.5025f91d.js.map": "https://jjcharlinski.ca/static/js/main.5025f91d.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f7654cf.css",
-    "static/js/main.09d9c0b9.js"
+    "static/css/main.cdb4d351.css",
+    "static/js/main.5025f91d.js"
   ]
 }

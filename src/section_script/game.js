@@ -59,12 +59,14 @@ function load_game(load) {
       this.playerImage.src = process.env.PUBLIC_URL + "/img/game/spaceship.png";
       this.gameWidth = gameWidth;
       this.gameHeight = gameHeight;
-      this.width = 20;
-      this.height = 40;
+      this.width = 33;
+      this.height = 33;
+      this.collisionBuffer = 5;
       this.x = gameWidth / 2 - this.width / 2;
       this.y = this.gameHeight - this.height * 2;
       this.speed = 0;
       this.yVelocity = 0;
+      this.acceleration = 3;
     }
 
     draw() {
@@ -72,15 +74,30 @@ function load_game(load) {
     }
 
     detectCollision(asteroid) {
-      if (
-        this.x < asteroid.asteroidX + asteroid.asteroidWidth &&
-        this.x + this.width > asteroid.asteroidX &&
-        this.y < asteroid.asteroidY + asteroid.asteroidWidth &&
-        this.y + this.height > asteroid.asteroidY
-      ) {
+      // Calculate the radius of the asteroid
+      const asteroidRadius = asteroid.asteroidWidth / 2;
+    
+      // Calculate the center point of the asteroid
+      const asteroidCenterX = asteroid.asteroidX + asteroidRadius;
+      const asteroidCenterY = asteroid.asteroidY + asteroidRadius;
+    
+      // Calculate the coordinates of the center point of the player
+      const playerCenterX = this.x + this.width / 2;
+      const playerCenterY = this.y + this.height / 2;
+    
+      // Calculate the distance between the centers of the two objects
+      const distanceX = playerCenterX - asteroidCenterX;
+      const distanceY = playerCenterY - asteroidCenterY;
+      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    
+      // Calculate the combined radius of the two objects
+      const combinedRadius = this.width / 2 + asteroidRadius;
+    
+      // Check if the distance between the centers of the two objects is less than the combined radius
+      if (distance < combinedRadius) {
         return true;
       }
-
+    
       return false;
     }
 
@@ -107,8 +124,8 @@ function load_game(load) {
         verticalMovement /= Math.sqrt(2);
       }
 
-      this.x += horizontalMovement * 5;
-      this.y += verticalMovement * 5;
+      this.x += horizontalMovement * this.acceleration;
+      this.y += verticalMovement * this.acceleration;
 
       if (this.x < 0) {
         this.x = 0;
@@ -136,8 +153,15 @@ function load_game(load) {
       this.spawnTimeout = true;
       this.spawnTimeoutDistance = 1000;
 
+
+
+      this.tinyAsteroidWidth = 18;
+      this.tinyAsteroidSpeed = 5;
+      this.tinyAsteroidReload = -200;
+      this.tinyAsteroid = null;
+
       this.smallAsteroidWidth = 25;
-      this.smallAsteroidSpeed = 5;
+      this.smallAsteroidSpeed = 4;
       this.smallAsteroidReload = -200;
       this.smallAsteroid1 = null;
       this.smallAsteroid2 = null;
@@ -158,6 +182,8 @@ function load_game(load) {
       this.massiveAsteroidSpeed = 1.5;
       this.massiveAsteroidReload = -200;
       this.massiveAsteroid = null;
+
+      this.allAsteroids = [];
     }
 
     createAsteroids() {
@@ -227,6 +253,27 @@ function load_game(load) {
         this.massiveAsteroidSpeed,
         this.massiveAsteroidReload
       );
+      this.tinyAsteroid = new Asteroid(
+        this.gameWidth,
+        this.gameHeight,
+        this.tinyAsteroidWidth,
+        0,
+        0,
+        this.tinyAsteroidSpeed,
+        this.tinyAsteroidReload
+      );
+
+
+      this.allAsteroids = [
+        this.massiveAsteroid,
+        this.tinyAsteroid,
+        this.bigAsteroid1,
+        this.bigAsteroid2,
+        this.medAsteroid1,
+        this.medAsteroid2,
+        this.smallAsteroid1,
+        this.smallAsteroid2,
+      ];
     }
 
     draw() {
@@ -274,6 +321,7 @@ function load_game(load) {
         this.medAsteroid2.draw();
         this.bigAsteroid2.draw();
         this.massiveAsteroid.draw();
+        this.tinyAsteroid.draw();
       }
     }
   }
@@ -328,17 +376,12 @@ function load_game(load) {
       player.update(input);
       asteroids.draw(ctx, player);
 
-      if (
-        player.detectCollision(asteroids.massiveAsteroid) ||
-        player.detectCollision(asteroids.bigAsteroid1) ||
-        player.detectCollision(asteroids.bigAsteroid2) ||
-        player.detectCollision(asteroids.smallAsteroid1) ||
-        player.detectCollision(asteroids.smallAsteroid2) ||
-        player.detectCollision(asteroids.medAsteroid1) ||
-        player.detectCollision(asteroids.medAsteroid2)
-      ) {
-        cancelAnimationFrame(animate);
-        end_game(score.value);
+      for (const asteroid of asteroids.allAsteroids) {
+        if (player.detectCollision(asteroid)) {
+          cancelAnimationFrame(animate);
+          end_game(score.value);
+          break;
+        }
       }
 
       score.value++;
@@ -348,6 +391,7 @@ function load_game(load) {
     animate();
   } else {
     end_game(score.value);
+    return;
   }
 
   function end_game(score) {
@@ -366,6 +410,7 @@ function load_game(load) {
 
     ctx.clearRect(0, 0, mainCVS.width, mainCVS.height);
     window.location.reload();
+    return;
   }
 }
 
