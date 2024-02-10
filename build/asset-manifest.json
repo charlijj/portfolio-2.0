@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "https://jaspercharlinski.info/static/css/main.ca2386e7.css",
-    "main.js": "https://jaspercharlinski.info/static/js/main.7acc887a.js",
+    "main.css": "https://jaspercharlinski.info/static/css/main.71330b9f.css",
+    "main.js": "https://jaspercharlinski.info/static/js/main.68994e02.js",
     "static/media/equalizer-background.gif": "https://jaspercharlinski.info/static/media/equalizer-background.14b22e14d0ae72536b0a.gif",
     "index.html": "https://jaspercharlinski.info/index.html",
-    "main.ca2386e7.css.map": "https://jaspercharlinski.info/static/css/main.ca2386e7.css.map",
-    "main.7acc887a.js.map": "https://jaspercharlinski.info/static/js/main.7acc887a.js.map"
+    "main.71330b9f.css.map": "https://jaspercharlinski.info/static/css/main.71330b9f.css.map",
+    "main.68994e02.js.map": "https://jaspercharlinski.info/static/js/main.68994e02.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca2386e7.css",
-    "static/js/main.7acc887a.js"
+    "static/css/main.71330b9f.css",
+    "static/js/main.68994e02.js"
   ]
 }
