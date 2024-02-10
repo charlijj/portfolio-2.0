@@ -156,8 +156,8 @@ export function aboutMe() {
         <h1 class="subtitle">My Background</h1>
         <div class="App-about-me-img-container">
         <p>
-            Hi! My name is Jasper, I'm a 20-year-old programming enthusiast born and raised on beautiful Vancouver Island.
-            I spent my early years residing in Coombs licking ice cream, looking at goats on the roof, and exploring the beautiful forests. However, when I was around 8 years old, my life underwent a significant change as my family moved to the bustling city of Victoria. I enjoyed living amidst all the amenities that the city had to offer for around three years until my family decided to return to the Oceanside area and move to Parksville, where I spent the rest of my youth.
+            Hi! My name is Jasper, I'm a 21-year-old technology enthusiast born and raised on beautiful Vancouver Island. I am originally from 
+            the small community of Coombs, but moved to the city of Victoria at when I was 6. My current residence is the city of Sparwood. 
         </p>
         <div class="App-about-me-img-caption">        
             <img src=${
@@ -180,10 +180,18 @@ export function aboutMe() {
               process.env.PUBLIC_URL + "/img/viu-logo.jpg"
             } alt="me" style="width: 150px;" id="viuLogo" />
           </div>
-          <p>I am currently studying computer science at Vancouver Islands University and am set to graduate with a Diploma in Computer Science in April of this year. </p>
+          <p>
+              I am currently studying computer science at Vancouver Islands University, I have graduated with a Diploma in Computer Science in April 2023. I am continuing my studies and plan.
+              to graduate with a BSc in computer science in 2025.
+          </p>
         </div>
-        <p>I am interested in all computer science topics but most notably web development as I love the combination of artistry and technical skill. The creative aspects of front-end web development engage my inner designer and I love the process of going from a blank screen to a fully-fledged web application. I also find the back end of web development incredibly interesting, I enjoy the technical problem-solving aspects of writing secure server-side code as well.</p>
-        <p>Ultimately, I plan on returning to university to continue my education in computer science after gaining practical experience in the industry. I am particularly interested in web cyber security as it is a constantly expanding field that is becoming increasingly more important, and I would like to eventually specialize in this field.</p>
+        <p>
+            I am interested in all computer science topics but most notably networking technologies and automation. My ultimate career goal is to become a network automation
+            and security engineer. 
+        </p>
+        <p>
+            Alongside my university studies, I am also working towards attaining industry citification such as my CCNA, Comptia trifecta, and Azure citifications.
+        </p>
     `;
   Background.classList.add("animate-in", "App-about-me-container");
 
@@ -232,13 +240,13 @@ export function aboutMe() {
                 } alt="me" style="width: 150px;" id="fish" />
                 <p>Hiding fish in the tide pools of Ucluelet</p>
             </div>
-            <p>I participate in a few art-related hobbies. Including painting, mostly in the style of cubism with acrylic and watercolors, my biggest inspirations are Picasso and ancient South American art.  Nature Photography, I like capturing scenic nature views typically during sunset. I also enjoy capturing wildlife photos whenever I get the opportunity. And art galleries, I love going to art galleries/shows as well as art museums to get inspiration from the creative works of others.</p>
+            <p>I participate in a few art-related hobbies. Including painting, mostly in the style of cubism with acrylic and watercolors, my biggest inspirations are Picasso and South American art.  Nature Photography, I like capturing scenic nature views typically during sunset. I also enjoy capturing wildlife photos whenever I get the opportunity. And art galleries, I love going to art galleries/shows as well as art museums to get inspiration from the creative works of others.</p>
         </div>
         <div class="line"></div>
         <a id="Activities"></a>
         <h3>Activities</h3>
         <div class="App-about-me-img-container">
-            <p>I'm an enthusiastic lover of the outdoors, as long as the weather cooperates. Hiking and backpacking scenic trails all over Vancouver Island is one of my favorite activities, and I'm always looking to discover new places to explore. Additionally, I enjoy free diving, having been fortunate enough to experience the seemingly otherworldly scenes of both warm and cold water reefs.</p>
+            <p>I'm an enthusiastic lover of the outdoors, as long as the weather cooperates. Hiking and backpacking scenic trails all over Vancouver Island is one of my favorite activities, and I'm always looking for new places to explore. Additionally, I enjoy free diving, having been fortunate enough to experience the seemingly otherworldly scenes of both warm and cold water reefs.</p>
             <div class="App-about-me-img-caption">        
                 <img src=${
                   process.env.PUBLIC_URL + "/img/my-pics/nanaimo.jpg"
@@ -264,16 +272,18 @@ export function aboutMe() {
         <p style="text-align=center;"><strong>From my time studying computer science topics I have developed the following skills:</strong></p>
         <div style="text-align: left;">
         <p>General Programming: C++, C#, Python, VBA</p>
-        <p>Scripting: Python, Bash, Make</p>
+        <p>Scripting: Python, Bash, Batch, Make</p>
         <p>Web Development: HTML5, CSS, SASS, PHP, JavaScript (Ajax, jQuery, React, APIs)</p>
-        <p>Web Frameworks: WordPress, Django, Flask, custom Shopify stores,</p>
+        <p>Web Frameworks: WordPress, Django, Flask</p>
         <p>Database Systems: SQL with MySQL, Oracle, and SQLite</p>
         <p>Solid understanding of UI and UX design principles</p>
-        <p>Solid understanding of the OSI model, TCP/IP, DNS, DHCP, Static IP, LAN/WAN, and network topologies</p>
+        <p>Solid understanding of the OSI model, TCP/IP, UDP/IP, DNS, DHCP, subnetting, VLAN, LAN, and WAN</p>
+        <p>Familiar with Cisco Packet Tracer and using IOS command line to configure Cisco routers and switches.</p>
         <p>Linux system client/server creation and maintenance (Arch, Debian, Ubuntu, Core)</p>
+        <p>Windows administration tools and CMD/Batch scripting, some Powershell scripting</P>
         <p>Automated testing (writing testing scripts, unit testing, integration testing)</p>
         <p>Proficient with Git and GitHub</p>
-        <p>Proficient with Microsoft Excel and Word</p>
+        <p>Proficient with Microsoft Office suite</p>
         </div>
     `;
   Skills.classList.add("animate-in", "App-about-me-container");
@@ -317,6 +327,22 @@ PROJECTS FUNCTIONS
 --------------------------------------------------------------*/
 
 const PROJECTS_OBJECT = [
+  {
+    name: "GeoDetective",
+    id: "GeoDetective",
+    language: ["JavaScript", "HTML/CSS"],
+    date: "2023-04",
+    rating: "5",
+    desc: "GeoDetective is a guessing game that asks a series of questions and pinpoints the city you are thinking of. On average, GeoDetective takes 30 guesses to get your city.",
+    img: "/img/geodetective.png",
+    fullDesc: `
+    GeoDetective is a guessing game that asks a series of questions and pinpoints the city you are thinking of. On average, GeoDetective takes 30 guesses to get your city.
+    To play GeoDetective, simply think of a city and then click on the "Play" button. GeoDetective will then ask you a series of yes or no questions to narrow down the possible cities. GeoDetective first guesses your country, then state/province/region, then finally your city. Each guess updates the map to show the coordinates of the current guess to help the player answer the questions.
+    You can play GeoDetective <a href="https://geodetectivepro.netlify.app/" target="_blank">HERE</a>
+        `,
+    link: "https://github.com/charlijj/GeoDetective",
+    show: true,
+  },
   {
     name: "Audio Visualizers",
     id: "AudioVisualizers",

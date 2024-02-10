@@ -409,6 +409,9 @@ function load_game(load) {
     }
 
     ctx.clearRect(0, 0, mainCVS.width, mainCVS.height);
+
+    let url = window.location.href.split('#')[0];
+    window.history.replaceState({}, document.title, url);
     window.location.reload();
     return;
   }

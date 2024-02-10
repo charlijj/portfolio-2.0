@@ -224,7 +224,7 @@ function App() {
           <a href="https://github.com/charlijj" target="_blank"><img src={process.env.PUBLIC_URL + "/img/github-Icon.png"}alt="github-icon" className="footer-link-img"></img></a>
         </div>
         <p>View <a href="https://github.com/charlijj/portfolio-2.0" target="_blank"><strong>source code</strong></a> for this website</p>
-        <p>Jasper Charlinski, Feb 16th 2023 &copy;</p>
+        <p>Jasper Charlinski, Feb 10th 2024 &copy;</p>
         <a href="#top"><strong>TOP</strong></a>
         </footer>
     </div>
