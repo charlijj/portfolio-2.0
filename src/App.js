@@ -13,9 +13,9 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     const theme = window.localStorage.getItem("theme");
-    if (theme === "dark")
+    if (theme === "light")
     {
-      document.body.id = "body";
+      document.body.id = "darkBody";
       themeChange();
     }
 
@@ -111,7 +111,7 @@ function App() {
 
     <div className="App">
       <div className="theme-button-container">
-        <p className="theme-label" id="themeLabel">Go Dark</p>
+        <p className="theme-label" id="themeLabel">Go Light</p>
         <div className="theme-button" id="themeButton" onClick={themeChange}>
           <img src={process.env.PUBLIC_URL + "/img/dark-mode.png"} alt="dark mode" id="themeImage"></img>
         </div>

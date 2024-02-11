@@ -8,12 +8,12 @@ export function headerTitle() {
   const titleText = "Welcome To Jasper's Portfolio";
   const header = document.createElement("h1");
   header.textContent = titleText;
-  header.classList.add("animate-in", "App-header-title");
+  header.classList.add( "App-header-title", "App-header-title-text");
 
   const subtitleText = "Enjoy Your Stay!";
   const subtitle = document.createElement("h3");
   subtitle.textContent = subtitleText;
-  subtitle.classList.add("animate-in", "App-header-subtitle");
+  subtitle.classList.add("App-header-subtitle", "App-header-title-text");
 
   if (!ctx.canvas.parentNode.querySelector("h1")) {
     ctx.canvas.parentNode.appendChild(header, ctx.canvas);
@@ -23,7 +23,7 @@ export function headerTitle() {
     if (!ctx.canvas.parentNode.querySelector("h3")) {
       ctx.canvas.parentNode.appendChild(subtitle, ctx.canvas);
     }
-  }, 500);
+  }, 1000);
 
   ctx.canvas.style.display = "none";
 }
@@ -258,10 +258,15 @@ export function aboutMe() {
         <div class="line"></div>
         <a id="Entrepreneurship"></a>
         <h3>Entrepreneurship</h3>
-        <p>I've always had an entrepreneurial mindset and have looked up to individuals who have achieved financial independence from creating their own businesses. I started my first business with my sister when I was 6, we sold lemonade and painted rocks outside of the Coombs Market and made more money in one day than I had ever seen in my life. Ever since then, I knew entrepreneurship was something I would like to pursue.</p>
-        <p>The most successful business I ran was an IT support business I started while I was in high school. I noticed my community had a larger-than-average elderly population and saw the demand for local quick and assessable tech support solutions. My friend and I decided to capitalize on this and we started to post flyers around town advertising our business. A month later we had over 30 clients and provided them with services such as TV and cable box setups, router setups, sound system setups, teaching them how to use their new device/computer, and any other low-level IT support they needed. We ran this business for about 2.5 years until we graduated and had to close up shop since we were moving away for university.</p>
-        <p>The following year after completing my first two terms of my computer science degree and failing to secure an internship, I decided to put my newfound knowledge to work and start a website design service. I noticed that many of the street vendors at the local markets lacked a website, so I decided to target this market. I offered incredibly cheap static websites that customers could customize by choosing a template and then picking the colors of and entering their own content. The biggest issue was that I did not have a web server that I could host off of so I had to help customers host their websites themselves which really limited the potential of the business. Overall it was a great learning experience and returned an adequate profit.</p>
-        </div>  
+          <h5>Entrepreneurial Beginnings</h5>
+          <p>From a young age, I've admired those who achieve financial independence through entrepreneurship. My sister and I, at just 6 years old, launched our first venture, selling lemonade and painted rocks. This early success fueled my passion for entrepreneurship.</p>
+
+          <h5>High School Venture</h5>
+          <p>In high school, I spotted an opportunity in my community's elderly population: a need for accessible tech support. With a friend, we launched an IT support business, attracting over 30 clients within a month. We provided a range of services, from TV setups to teaching computer basics. Operating for 2.5 years, we closed upon graduating.</p>
+
+          <h5>Website Design Venture</h5>
+          <p>After my first two terms of studying computer science, lacking an internship, I ventured into website design. Recognizing a gap in the market for street vendors lacking online presence, I offered low-cost static websites. Despite challenges like lacking a web server, it proved a valuable learning experience with reasonable profits.</p>
+      </div>  
     `;
   Hobbies.classList.add("animate-in", "App-about-me-container");
 
@@ -388,7 +393,7 @@ const PROJECTS_OBJECT = [
   {
     name: "VIU Parking Lot Occupancy Tracker",
     id: "VIUParkingLotOccupancyTracker",
-    language: ["C++", "Python", "PHP", "SQL", "HTML/CSS"],
+    language: ["Python", "PHP", "SQL", "HTML/CSS"],
     date: "2023-03",
     rating: "5",
     desc: "An information system that analyzes VIU parking lot footage which lets users know how likely they are to find parking spots in each lot.",
@@ -437,7 +442,7 @@ const PROJECTS_OBJECT = [
   {
     name: "XTract",
     id: "XTract",
-    language: ["Python"],
+    language: ["Python", "SQL"],
     date: "2023-02",
     rating: "4",
     desc: "A resumes parser designed to help HR sort through resumes and organize information.",
